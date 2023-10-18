@@ -31,5 +31,6 @@ setup(
     install_requires=[
         "importlib-metadata >=4.0",
         "ansys-tools-path>=0.3.1",
+        "click>=8.1.3",
     ],
 )

@@ -68,6 +68,3 @@ venv.bak/
 
 # PyCharm
 .idea/
-
-# Licence Headers
-.reuse/
