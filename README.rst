@@ -7,19 +7,15 @@ Pyansys-mechanical-env library
    :alt: PyAnsys
 
 .. |python| image:: https://img.shields.io/pypi/pyversions/pyansys-mechanical-env-library?logo=pypi
-   :target: https://pypi.org/project/pyansys-mechanical-env-library/
+   :target: https://pypi.org/project/pymechanical-env/
    :alt: Python
 
 .. |pypi| image:: https://img.shields.io/pypi/v/pyansys-mechanical-env-library.svg?logo=python&logoColor=white
-   :target: https://pypi.org/project/pyansys-mechanical-env-library
+   :target: https://pypi.org/projectpymechanical-env
    :alt: PyPI
 
-.. |codecov| image:: https://codecov.io/gh/pyansys/pyansys-mechanical-env-library/branch/main/graph/badge.svg
-   :target: https://codecov.io/gh/pyansys/pyansys-mechanical-env-library
-   :alt: Codecov
-
 .. |GH-CI| image:: https://github.com/pyansys/pyansys-mechanical-env-library/actions/workflows/ci_cd.yml/badge.svg
-   :target: https://github.com/pyansys/pyansys-mechanical-env-library/actions/workflows/ci_cd.yml
+   :target: https://github.com/pyansys/pymechanical-env/workflows/ci_cd.yml
    :alt: GH-CI
 
 .. |MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg
@@ -29,6 +25,10 @@ Pyansys-mechanical-env library
 .. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg?style=flat
    :target: https://github.com/psf/black
    :alt: Black
+
+.. |pre-commit-ci| image:: https://results.pre-commit.ci/badge/github/ansys/pymechanical-env/main.svg
+   :target: https://results.pre-commit.ci/latest/github/ansys/pymechanical-env/main
+   :alt: pre-commit.ci status
 
 Overview
 --------
