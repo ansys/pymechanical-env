@@ -127,7 +127,7 @@ jobs:
         run: |
           mkdir tmp
           cd tmp
-          python -c "import ansys.mechanical.env; print('Successfully imported ansys.api.mechanical')"
+          python -c "import ansys.mechanical.env; print('Successfully imported ansys.mechanical.env')"
           python -c "from ansys.mechanical.env import __version__; print(__version__)"
       - name: Upload packages
         uses: actions/upload-artifact@v2
@@ -218,7 +218,7 @@ jobs:
       - name: Install packages for testing
         run: |
           pip3 install -e .
-          pip3 install -r requirements/requirements/requirements_tests.txt
+          pip3 install -r requirements/requirements_tests.txt
 
       - name: Set environment variable
         run: echo "ANSYSCL232_DIR=/install/ansys_inc/v232/licensingclient" >> $GITHUB_ENV
