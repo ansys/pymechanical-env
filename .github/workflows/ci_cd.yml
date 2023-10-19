@@ -10,18 +10,11 @@ on:
       - main
       #- release/*
 env:
-  PYMECHANICAL_PORT: 10000  # default won't work on GitHub runners
-  PYMECHANICAL_START_INSTANCE: FALSE
-  DOCKER_PACKAGE: ghcr.io/ansys/mechanical
-  DOCKER_MECH_CONTAINER_NAME: mechanical
-  PACKAGE_NAME: ansys-mechanical-core
-  PACKAGE_NAMESPACE: ansys.mechanical.core
-  DOCUMENTATION_CNAME: mechanical.docs.pyansys.com
   MAIN_PYTHON_VERSION: '3.10'
 
-  # concurrency:
-  #   group: ${{ github.workflow }}-${{ github.ref }}
-  #   cancel-in-progress: true
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
 

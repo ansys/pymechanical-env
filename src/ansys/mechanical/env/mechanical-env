@@ -8,7 +8,7 @@ fi
 
 # Check if at least one argument was provided
 if [ $# -lt 1 ]; then
-    echo "Usage: ./.mechanical-env [-r REVISION] [COMMAND]"
+    echo "Usage: mechanical-env [-r REVISION] [COMMAND]"
     exit 1
 fi
 
@@ -94,9 +94,10 @@ LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
 :${DS_INSTALL_DIR}/lib/linx64\
 :${DS_INSTALL_DIR}/dll/linx64\
 :${DS_INSTALL_DIR}/libshared/linx64\
-:${!awp_root}/tp/IntelCompiler/2019.3.199/linx64/lib/intel64\
+:${!awp_root}/tp/IntelCompiler/2023.1.0/linx64/lib/intel64\
 :${!awp_root}/tp/IntelMKL/2020.0.166/linx64/lib/intel64\
 :${!awp_root}/tp/qt_fw/5.9.6/Linux64/lib\
+:${!awp_root}/tp/nss/3.89/lib\
 :${!awp_root}/commonfiles/CAD/Acis/linx64\
 :${!awp_root}/commonfiles/fluids/lib/linx64\
 :${!awp_root}/Framework/bin/Linux64
