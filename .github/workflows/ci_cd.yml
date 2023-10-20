@@ -60,9 +60,6 @@ jobs:
           cd tmp
           python -c "import ansys.mechanical.env; print('Successfully imported ansys.mechanical.env')"
           python -c "from ansys.mechanical.env import __version__; print(__version__)"
-      - name: Test Environment 
-        run: |
-          mechanical-env python -c "import os;os.environ["LD_LIBRARY_PATH"]"
       - name: Upload packages
         uses: actions/upload-artifact@v2
         with:
