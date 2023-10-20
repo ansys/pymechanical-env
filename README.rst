@@ -1,25 +1,21 @@
 Pyansys-mechanical-env library
 ==============================
-|pyansys| |python| |pypi| |GH-CI| |codecov| |MIT| |black|
+|pyansys| |python| |pypi| |GH-CI| |MIT| |black| |pre-commit-ci|
 
 .. |pyansys| image:: https://img.shields.io/badge/Py-Ansys-ffc107.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC
    :target: https://docs.pyansys.com/
    :alt: PyAnsys
 
 .. |python| image:: https://img.shields.io/pypi/pyversions/pyansys-mechanical-env-library?logo=pypi
-   :target: https://pypi.org/project/pyansys-mechanical-env-library/
+   :target: https://pypi.org/project/pymechanical-env/
    :alt: Python
 
 .. |pypi| image:: https://img.shields.io/pypi/v/pyansys-mechanical-env-library.svg?logo=python&logoColor=white
-   :target: https://pypi.org/project/pyansys-mechanical-env-library
+   :target: https://pypi.org/projectpymechanical-env
    :alt: PyPI
 
-.. |codecov| image:: https://codecov.io/gh/pyansys/pyansys-mechanical-env-library/branch/main/graph/badge.svg
-   :target: https://codecov.io/gh/pyansys/pyansys-mechanical-env-library
-   :alt: Codecov
-
-.. |GH-CI| image:: https://github.com/pyansys/pyansys-mechanical-env-library/actions/workflows/ci_cd.yml/badge.svg
-   :target: https://github.com/pyansys/pyansys-mechanical-env-library/actions/workflows/ci_cd.yml
+.. |GH-CI| image:: https://github.com/ansys/pymechanical-env/actions/workflows/ci_cd.yml/badge.svg
+   :target: https://github.com/ansys/pymechanical-env/workflows/ci_cd.yml
    :alt: GH-CI
 
 .. |MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg
@@ -30,8 +26,16 @@ Pyansys-mechanical-env library
    :target: https://github.com/psf/black
    :alt: Black
 
+.. |pre-commit-ci| image:: https://results.pre-commit.ci/badge/github/ansys/pymechanical-env/main.svg
+   :target: https://results.pre-commit.ci/latest/github/ansys/pymechanical-env/main
+   :alt: pre-commit.ci status
 
-A P
+Overview
+--------
+``ansys-mechanical-env`` supports ``PyMechanical`` in Linux environment.
+
+- Finds the version and location of mechanical or gives user an option to provide version number to find the location
+- Loads all environment variable necessary for PyMechanical.
 
 
 How to install
@@ -189,3 +193,20 @@ the building requirements and then executing the build module:
 .. _pytest: https://docs.pytest.org/en/stable/
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _tox: https://tox.wiki/
+
+License and acknowledgments
+---------------------------
+``ansys-mechanical-env`` is licensed under
+the `MIT license <https://github.com/ansys/pymechanical-env/blob/main/LICENSE>`_.
+
+Please see the `.reuse/dep5 file <https://github.com/ansys/pymechanical-env/blob/main/.reuse/dep5>`_ file for more details, which
+follows the `Reuse specification <https://reuse.software/spec/>`_.
+``ansys-mechanical-env`` package makes no commercial claim over Ansys
+whatsoever.  This tool supports ``ansys-mechanical-core`` which extends
+the functionality of ``ANSYS MECHANICAL`` by adding a Python interface
+to the MECHANICAL service without changing the core behavior or
+license of the original software.  The use of the ``ansys-mechanical-core``
+with embedded or remote instance requires a legally licensed
+local copy of Ansys.
+
+To get a copy of Ansys, visit `Ansys <https://www.ansys.com/>`_.
