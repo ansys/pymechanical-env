@@ -102,6 +102,11 @@ LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
 :${!awp_root}/commonfiles/fluids/lib/linx64\
 :${!awp_root}/Framework/bin/Linux64
 
+# Env variable only for version 241
+if [ "$version" -eq 241 ]; then
+    LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${!awp_root}/tp/stdc++\
+fi
+
 # system path
 PATH=${MWHOME}/bin-amd64_linux_optimized\
 :${DS_INSTALL_DIR}/CommonFiles/linx64\
