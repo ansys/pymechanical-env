@@ -63,7 +63,7 @@ jobs:
       - name: Upload packages
         uses: actions/upload-artifact@v2
         with:
-          name: ansys-api-mechanical-packages
+          name: ansys-mechanical-env-package
           path: dist/
           retention-days: 7
 
