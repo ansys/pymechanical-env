@@ -37,9 +37,7 @@ for use on Linux operating systems. It includes the ability to:
 
 - Find the version and location of the Mechanical installation on the system.
 - Find the location of the Mechanical installation given a user specified version.
-- Load all environment variables necessary for executing embedded instances of
-PyMechanical in Linux.
-
+- Load all environment variables necessary for executing embedded instances of PyMechanical in Linux.
 
 How to install
 --------------
