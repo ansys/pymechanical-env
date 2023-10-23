@@ -2,8 +2,10 @@
 
 ## Project Lead or Owner
 
-* [First Last]()
+* [Dipin Nair](https://github.com/dipinknair)
 
 ## Individual Contributors
 
-* [First Last]()
+* [Mohamed Koubaa](https://github.com/koubaa)
+* [Roberto Pastor](https://github.com/)
+* [Kerry McAdams](https://github.com/klmcadams)
