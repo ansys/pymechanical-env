@@ -40,7 +40,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   package:
-    name: Package library
+    name: Build package
     needs: [style, doc-style]
     runs-on: ubuntu-latest
     steps:
