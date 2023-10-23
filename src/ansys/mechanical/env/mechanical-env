@@ -55,12 +55,12 @@ fi
 # Extract and print the captured values
 read -r version DS_INSTALL_DIR <<< "$output"
 
-# workbench (mechanical) installation directory
+# Set Workbench (Mechanical) installation directory
 awp_root="AWP_ROOT${version}"
 eval ${awp_root}=$DS_INSTALL_DIR/..
 export $awp_root
 
-# # Env vars used by workbench (mechanical) code
+# Set environment variables used by Workbench (Mechanical) code
 awp_locale="AWP_LOCALE${version}"
 eval ${awp_locale}=en-us
 export $awp_locale
@@ -75,7 +75,7 @@ ansyscl="ANSYSCL${version}_DIR"
 eval ${ansyscl}=${!awp_root}/licensingclient
 export $ansyscl
 
-# MainWin vars
+# Set MainWin variables
 ANSISMAINWINLITEMODE=1
 export ANSISMAINWINLITEMODE
 MWCONFIG_NAME=amd64_linux
@@ -97,11 +97,11 @@ export MWUSER_DIRECTORY
 MWDONT_XCLOSEDISPLAY=1
 export MWDONT_XCLOSEDISPLAY
 
-# dynamic library preload
+# Set dynamic library preload
 LD_PRELOAD=libstdc++.so.6.0.28
 export LD_PRELOAD
 
-# dynamic library load path
+# Set dynamic library load path
 LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
 :${!awp_root}/tp/openssl/1.1.1/linx64/lib\
 :${MWHOME}/lib-amd64_linux\
@@ -117,6 +117,7 @@ LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
 :${!awp_root}/commonfiles/fluids/lib/linx64\
 :${!awp_root}/Framework/bin/Linux64
 
+# Add extra path to the dynamic library load path if version is 241
 if [ "$version" = "241"  ]; then
     # Updating for Revision 241
     LD_LIBRARY_PATH=${LD_LIBRARY_PATH}\
@@ -129,7 +130,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-# system path
+# Set system path
 PATH=${MWHOME}/bin-amd64_linux_optimized\
 :${DS_INSTALL_DIR}/CommonFiles/linx64\
 :${DS_INSTALL_DIR}/CADIntegration/linx64\
@@ -137,6 +138,7 @@ PATH=${MWHOME}/bin-amd64_linux_optimized\
 :${PATH}
 export PATH
 
+# Evaluate the command and get the return code of the process
 eval $@
 returnCode=$?
 exit $returnCode

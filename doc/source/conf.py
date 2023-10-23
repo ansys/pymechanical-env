@@ -8,16 +8,16 @@ from ansys_sphinx_theme import pyansys_logo_black as logo
 from ansys.mechanical.env import __version__
 
 # Project information
-project = "ansys.mechanical,env"
+project = "ansys-mechanical-env"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
 release = version = __version__
-cname = os.getenv("DOCUMENTATION_CNAME", "docs.pyansys.com")
+cname = os.getenv("DOCUMENTATION_CNAME", "mechanical-env.docs.pyansys.com")
 
 # Select desired logo, theme, and declare the html title
 html_logo = logo
 html_theme = "ansys_sphinx_theme"
-html_short_title = html_title = "pyechanical-env"
+html_short_title = html_title = "pymechanical-env"
 
 # specify the location of your github repo
 html_theme_options = {
@@ -25,7 +25,8 @@ html_theme_options = {
     "show_prev_next": False,
     "show_breadcrumbs": True,
     "additional_breadcrumbs": [
-        ("PyAnsys", "https://mechanical.docs.pyansys.com/"),
+        ("PyAnsys", "https://docs.pyansys.com/"),
+        ("PyMechanical", "https://mechanical.docs.pyansys.com/"),
     ],
     "switcher": {
         "json_url": f"https://{cname}/versions.json",
@@ -46,13 +47,6 @@ extensions = [
 # Intersphinx mapping
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    # kept here as an example
-    # "scipy": ("https://docs.scipy.org/doc/scipy/reference", None),
-    # "numpy": ("https://numpy.org/devdocs", None),
-    # "matplotlib": ("https://matplotlib.org/stable", None),
-    # "pandas": ("https://pandas.pydata.org/pandas-docs/stable", None),
-    # "pyvista": ("https://docs.pyvista.org/", None),
-    # "grpc": ("https://grpc.github.io/grpc/python/", None),
 }
 
 # numpydoc configuration
@@ -77,7 +71,6 @@ numpydoc_validation_checks = {
     # type, unless multiple values are being returned"
 }
 
-
 # static path
 html_static_path = ["_static"]
 
@@ -89,3 +82,9 @@ source_suffix = ".rst"
 
 # The master toctree document.
 master_doc = "index"
+
+# Once the repo goes public, remove these links
+linkcheck_ignore = [
+    r"https://github.com/ansys/pymechanical-env/*",
+    r"https://pypi.org/project/ansys-mechanical-env",
+]

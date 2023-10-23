@@ -7,8 +7,8 @@ setup(
     version="0.1.dev0",
     url="https://github.com/ansys/pymechanical-env",
     author="ANSYS, Inc.",
-    author_email="pyansys.support@ansys.com",
-    maintainer="PyAnsys developers",
+    author_email="pyansys.core@ansys.com",
+    maintainer="ANSYS, Inc.",
     maintainer_email="pyansys.core@ansys.com",
     classifiers=[
         "Development Status :: 4 - Beta",

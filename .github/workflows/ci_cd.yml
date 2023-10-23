@@ -1,6 +1,5 @@
 name: GitHub CI
 
-# run only on main branch.  This avoids duplicated actions on PRs
 on:
   pull_request:
   push:
@@ -8,9 +7,12 @@ on:
       - "*"
     branches:
       - main
-      #- release/*
+      - release/*
+
 env:
   MAIN_PYTHON_VERSION: '3.10'
+  DOCUMENTATION_CNAME: 'mechanical-env.docs.pyansys.com'
+  LIBRARY_NAME: 'ansys-mechanical-env'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

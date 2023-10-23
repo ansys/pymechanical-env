@@ -2,6 +2,36 @@
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "ansys-mechanical-env"
+
+version = "0.1.dev0"
+description = "A python wrapper for loading environment variables when using PyMechanical"
+readme = "README.rst"
+requires-python = ">=3.8,<4"
+license = {file = "LICENSES/MIT.txt"}
+authors = [
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
+]
+maintainers = [
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+Source = "https://github.com/ansys/pymechanical-env"
+Tracker = "https://github.com/ansys/pymechanical-env/issues"
+Homepage = "https://github.com/ansys/pymechanical-env"
+Documentation = "https://pymechanical-env.docs.ansys.com"
+
 [tool.black]
 line-length = 100
 
