@@ -37,7 +37,7 @@ for use on Linux operating systems. It includes the ability to:
 
 - Find the version and location of the Mechanical installation on the system.
 - Find the location of the Mechanical installation given a user specified version.
-- Load all environment variables necessary for executing embedded instances of PyMechanical in Linux.
+- Load all environment variables necessary for executing embedded instances of pymechanical in Linux.
 
 How to install
 --------------
@@ -116,7 +116,7 @@ Basic usage
 -----------
 Once ``ansys-mechanical-env`` and ``ansys-mechanical-core`` are installed,
 ``mechanical-env`` can be run in the command line. This command line script is
-intended to support launching and testing embedded instances of `PyMechanical`_
+intended to support launching and testing embedded instances of `pymechanical`
 on Linux.
 
 Launch a Python shell containing environment variables set up by ``mechanical-env``.
@@ -127,7 +127,7 @@ necessary for running embedded instances on Linux.
 
       mechanical-env python
 
-  Once you are in the Python shell, you can run an embedded instance of `PyMechanical`_.
+  Once you are in the Python shell, you can run an embedded instance of `pymechanical`.
 
   ..code:: python
 
@@ -135,7 +135,7 @@ necessary for running embedded instances on Linux.
       >>> app = pymechanical.App()
       >>> print(app)
 
-Run all embedding tests in the `PyMechanical`_ repository. This is an alternative
+Run all embedding tests in the `pymechanical` repository. This is an alternative
 to using .workbench_lite.
 
   ..code:: bash
