@@ -1,5 +1,7 @@
 # Contributing
 
-Please, refer to the [PyAnsys Developer's Guide] for contributing to this project.
+Overall guidance on contributing to a PyAnsys library appears in
+[Contributing] in the *PyAnsys Developer's Guide*. Ensure that you are thoroughly familiar
+with this guide before attempting to contribute to PyMechanical.
 
-[PyAnsys Developer's Guide]: https://dev.docs.pyansys.com/index.html
+[Contributing]: https://dev.docs.pyansys.com/how-to/contributing.html
