@@ -1,0 +1,124 @@
+# Copyright (C) 2023 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+import os
+import subprocess
+
+import ansys.tools.path as atp
+import pytest
+
+script_directory = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "../src/ansys/mechanical/env")
+)
+script_path = os.path.join(script_directory, "mechanical-env")
+
+
+def find_installed_versions():
+    """Finds all the installed version of Mechanical."""
+    supported_versions = [231, 232, 241]
+    versions_found = []
+    for supported_version in supported_versions:
+        try:
+            exe, version = atp.find_mechanical(version=supported_version)
+        except:
+            version = None
+        if version:
+            versions_found.append(supported_version)
+    return versions_found
+
+
+def test_commands(make_executable_and_restore):
+    """Ensure the system environment does not change when running ``mechanical-env``."""
+    start_env = os.environ
+    process = subprocess.Popen(
+        f"{script_path} make -C doc html",
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    # Check the command passed to subprocess
+    args = process.args
+
+    # Assert the commands
+    assert args == f"{script_path} make -C doc html"
+
+
+@pytest.mark.parametrize("version_number", find_installed_versions())
+def test_version_argument(version_number, make_executable_and_restore):
+    """Ensure script takes version and find if it present"""
+    process = subprocess.Popen(
+        f"{script_path} -r {version_number} env",
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    stdout, stderr = process.communicate()
+    assert stderr is None or stderr == b""
+
+
+def test_unsupported_version(make_executable_and_restore):
+    """Ensure script gives error for unsupported version."""
+    process = subprocess.Popen(
+        f"{script_path} -r 230 env", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+    stdout, stderr = process.communicate()
+    assert "ValueError" in stderr.decode()
+
+
+def test_env_variable(make_executable_and_restore):
+    """Ensure the system environment does not change when running ``mechanical-env``."""
+    start_env = os.environ
+    process = subprocess.Popen(
+        f"{script_path} python", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+    process.wait()
+    stdout = process.stdout.read().decode()
+    stderr = process.stderr.read().decode()
+
+    # Get environment after running mechanical-env
+    end_env = os.environ
+
+    # Assert the environment did not change
+    assert start_env == end_env
+
+
+@pytest.mark.parametrize("version_number", find_installed_versions())
+def test_bash_script(version_number, make_executable_and_restore):
+    """Check script sets the environment according to version"""
+    process = subprocess.Popen(
+        f"{script_path} env 2>&1", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+    stdout, stderr = process.communicate()
+    return_code = process.returncode
+
+    # Check for AWP_ROOT variable which created by script
+    assert f"AWP_ROOT{version_number}=/install/ansys_inc/v{version_number}/aisol/.." in str(stdout)
+    # Check variable specific to revision 232
+    if version_number == 232:
+        print(version_number)
+        assert "/tp/nss/3.89/lib" and "/tp/IntelCompiler/2023.1.0/linx64/lib/intel64" in str(stdout)
+    # Check variable specific to revision 241
+    if version_number == 241:
+        print(version_number)
+        assert "/tp/nss/3.89/lib" and "/tp/IntelCompiler/2023.1.0/linx64/lib/intel64" in str(stdout)
+    # Check if the script returned successfully
+    assert return_code == 0

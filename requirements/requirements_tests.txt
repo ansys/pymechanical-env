@@ -1,3 +1,4 @@
+ansys-tools-path>=0.3.1
 psutil>=5.9.1
 pytest
 pytest-cov
