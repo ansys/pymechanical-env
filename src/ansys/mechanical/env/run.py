@@ -46,7 +46,7 @@ def cli_find_mechanical(revision: int):
     ----------
     revision : int
         Ansys revision number.
-    
+
     Example
     -------
     Get the version and location of the installation directory.
