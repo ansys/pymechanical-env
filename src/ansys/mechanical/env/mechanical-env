@@ -58,7 +58,7 @@ if [ -z "$command" ]; then
     exit 1
 fi
 
-# Determine the appropriate command to run find-mechanical
+# Determine the appropriate command to run the find-mechanical command
 if [ -n "$revision" ]; then
     find_mechanical_command="find-mechanical -r $revision"
 else

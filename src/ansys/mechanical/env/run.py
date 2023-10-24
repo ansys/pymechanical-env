@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""CLI to find mechanical version and location."""
+"""CLI to find Mechanical version and location."""
 import os
 
 import ansys.tools.path as atp
@@ -34,24 +34,26 @@ import click
     "--revision",
     default=None,
     type=int,
-    help='Ansys Revision number, e.g. "241" or "232".\
+    help='Ansys revision number, such as "241" or "232".\
          If a revision number is not specified, git it uses the default from \
             ansys-tools-path.',
 )
 def cli_find_mechanical(revision: int):
     """
-    CLI tool to find the mechanical version and location.
+    Use the CLI tool to find the Mechanical version and location.
 
     Parameters
     ----------
     revision : int
-        The Ansys Revision number.
-    Example:
-    --------
-    Gets the version and location of install directory
+        Ansys revision number.
+    
+    Example
+    -------
+    Get the version and location of the installation directory.
+
     >>> find-mechanical -r 232
     """
-    # Gets the revision number
+    # Get the revision number
     if not revision:
         exe, version = atp.find_mechanical()
     else:
