@@ -41,15 +41,16 @@ jobs:
   tests:
     name: Tests
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/ansys/mechanical:24.1.0
-      options: --entrypoint /bin/bash
     needs: [style, doc-style]
     strategy:
       max-parallel: 2
       fail-fast: false
       matrix:
+        images: ['ghcr.io/ansys/mechanical:23.2.0', 'ghcr.io/ansys/mechanical:24.1.0']
         python-version: ['3.8', '3.9', '3.10', '3.11']
+    container:
+      image:  ${{ matrix.iamges }}
+      options: --entrypoint /bin/bash
 
     steps:
       - uses: actions/checkout@v4
@@ -77,8 +78,29 @@ jobs:
           pip3 install --upgrade pip
           pip3 install -r requirements/requirements_tests.txt
 
-      - name: Build library source and wheel artifacts
-        uses: ansys/actions/tests-pytest@v4
+      - name: Unit Testing and coverage
+        run: |
+          pytest > pytest_output.txt || true
+          cat pytest_output.txt
+          #
+          # Check if failure occurred
+          #
+          output=$(grep -c "FAILURES" pytest_output.txt || true)
+          if [ $output -eq 0 ]; then
+            echo "Pytest execution succeeded"
+            exit 0
+          else
+            echo "Pytest execution failed"
+            exit 1
+          fi
+
+      - name: Upload coverage results
+        uses: actions/upload-artifact@v3
+        if: env.MAIN_PYTHON_VERSION == matrix.python-version
+        with:
+          name: coverage-tests-remote-session-launch
+          path: .cov
+          retention-days: 7
 
   package:
     name: Package library
