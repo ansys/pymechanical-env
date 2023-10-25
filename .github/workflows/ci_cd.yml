@@ -84,7 +84,7 @@ jobs:
           #
           # Check if failure occurred
           #
-          output=$(grep -c "ERROR" pytest_output.txt || true)
+          output=$(grep -c "FAILURE\|ERROR" pytest_output.txt || true)
           if [ $output -eq 0 ]; then
             echo "Pytest execution succeeded"
             exit 0

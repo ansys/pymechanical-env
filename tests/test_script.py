@@ -60,7 +60,7 @@ def test_commands():
     args = process.args
 
     # Assert the commands
-    assert args == f"{script_path} make -C doc html"
+    assert args == cmd
 
 
 @pytest.mark.parametrize("version_number", find_installed_versions())
