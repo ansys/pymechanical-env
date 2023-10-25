@@ -26,10 +26,10 @@ import subprocess
 import ansys.tools.path as atp
 import pytest
 
-script_directory = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "../src/ansys/mechanical/env")
-)
-script_path = os.path.join(script_directory, "mechanical-env")
+# script_directory = os.path.abspath(
+#     os.path.join(os.path.dirname(__file__), "../src/ansys/mechanical/env")
+# # )
+# script_path = "mechanical-env"
 
 
 def find_installed_versions():
@@ -46,11 +46,12 @@ def find_installed_versions():
     return versions_found
 
 
-def test_commands(make_executable_and_restore):
+def test_commands():
     """Ensure the system environment does not change when running ``mechanical-env``."""
     start_env = os.environ
+    cmd = "mechanical-env make -C doc html"
     process = subprocess.Popen(
-        f"{script_path} make -C doc html",
+        cmd,
         shell=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -63,10 +64,11 @@ def test_commands(make_executable_and_restore):
 
 
 @pytest.mark.parametrize("version_number", find_installed_versions())
-def test_version_argument(version_number, make_executable_and_restore):
+def test_version_argument(version_number):
     """Ensure script takes version and find if it present"""
+    cmd = f"mechanical-env -r {version_number} env"
     process = subprocess.Popen(
-        f"{script_path} -r {version_number} env",
+        cmd,
         shell=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -75,20 +77,28 @@ def test_version_argument(version_number, make_executable_and_restore):
     assert stderr is None or stderr == b""
 
 
-def test_unsupported_version(make_executable_and_restore):
+def test_unsupported_version():
     """Ensure script gives error for unsupported version."""
+    cmd = "mechanical-env -r 230 env"
     process = subprocess.Popen(
-        f"{script_path} -r 230 env", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        cmd,
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
     )
     stdout, stderr = process.communicate()
     assert "ValueError" in stderr.decode()
 
 
-def test_env_variable(make_executable_and_restore):
+def test_env_variable():
     """Ensure the system environment does not change when running ``mechanical-env``."""
     start_env = os.environ
+    cmd = "mechanical-env python"
     process = subprocess.Popen(
-        f"{script_path} python", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        cmd,
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
     )
     process.wait()
     stdout = process.stdout.read().decode()
@@ -102,10 +112,14 @@ def test_env_variable(make_executable_and_restore):
 
 
 @pytest.mark.parametrize("version_number", find_installed_versions())
-def test_bash_script(version_number, make_executable_and_restore):
+def test_bash_script(version_number):
     """Check script sets the environment according to version"""
+    cmd = "mechanical-env env 2>&1"
     process = subprocess.Popen(
-        f"{script_path} env 2>&1", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        cmd,
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
     )
     stdout, stderr = process.communicate()
     return_code = process.returncode
