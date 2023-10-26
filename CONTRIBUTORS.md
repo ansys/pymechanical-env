@@ -9,3 +9,4 @@
 * [Mohamed Koubaa](https://github.com/koubaa)
 * [Roberto Pastor](https://github.com/RobPasMue)
 * [Kerry McAdams](https://github.com/klmcadams)
+* [Kathy Pippert](https://github.com/PipKat)

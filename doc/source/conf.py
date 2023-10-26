@@ -17,7 +17,7 @@ cname = os.getenv("DOCUMENTATION_CNAME", "mechanical-env.docs.pyansys.com")
 # Select desired logo, theme, and declare the html title
 html_logo = logo
 html_theme = "ansys_sphinx_theme"
-html_short_title = html_title = "Mechanical-Env"
+html_short_title = html_title = "PyMechanical-Env"
 
 # specify the location of your github repo
 html_theme_options = {

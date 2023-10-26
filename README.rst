@@ -1,5 +1,5 @@
-Mechanical-Env
-==============
+PyMechanical-Env
+================
 |pyansys| |python| |pypi| |GH-CI| |MIT| |black| |pre-commit-ci|
 
 .. |pyansys| image:: https://img.shields.io/badge/Py-Ansys-ffc107.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC
@@ -36,8 +36,8 @@ Overview
 ``ansys-mechanical-env`` facilitates the integration of ``PyMechanical`` within a Linux environment.
 
 - Automatically determine the version and location of the ANSYS Mechanical software.
-- Offers users the option to manually specify the version number.
-- Configure and set all the requisite environment variables.
+- Offer users the option to manually specify the version number.
+- Configure and set the requisite environment variables.
 
 Installation
 ------------
@@ -47,7 +47,7 @@ Two installation modes are provided: user and developer.
 Install in user mode
 ^^^^^^^^^^^^^^^^^^^^
 
-Before installing the ``ansys-mechanical-env``` package, make sure that you
+Before installing the ``ansys-mechanical-env`` package, make sure that you
 have the latest version of `pip`_ with this command:
 
 .. code:: bash
@@ -63,15 +63,15 @@ Then, install the ``ansys-mechanical-env`` package with this command:
 Install in developer mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Installing the ``mechanical-env`` package in developer mode allows you to modify the
+Installing the ``ansys-mechanical-env`` package in developer mode allows you to modify the
 source and enhance it.
 
 Before contributing to the project, ensure that you are thoroughly familiar with the
 `PyAnsys Developer's Guide`_.
 
-To install the ``mechanical-env`` package in developer mode, perform these steps:
+To install the ``ansys-mechanical-env`` package in developer mode, perform these steps:
 
-#. Clone the ``mechanical-env`` repository with this command:
+#. Clone the ``pymechanical-env`` repository with this command:
 
    .. code:: bash
 
@@ -100,7 +100,6 @@ To install the ``mechanical-env`` package in developer mode, perform these steps
 
       python -m pip install -U pip setuptools tox
       python -m pip install -r requirements/requirements_build.txt
-      python -m pip install -r requirements/requirements_doc.txt
       python -m pip install -r requirements/requirements_tests.txt
 
 
@@ -120,10 +119,10 @@ Basic usage
 -----------
 
 Once the ``ansys-mechanical-env`` and ``ansys-mechanical-core`` packages are installed,
-you can run the Mechanical-Env command-line tool to launch and test embedded instances
+you can run the PyMechanical-Env command-line tool to launch and test embedded instances
 of PyMechanical on Linux.
 
-Launching a Python shell containing environment variables set up by Mechanical-Env
+Launching a Python shell containing environment variables set up by PyMechanical-Env
 allows you to run embedded instances of PyMechanical on Linux.
 
 Launch the Python shell with this command.
@@ -145,8 +144,6 @@ Run all embedding tests in the PyMechanical repository with this command:
   ..code:: bash
 
      xvfb-run mechanical-env pytest -m embedding
-
-Running the preceding command is an alternative to using ``.workbench_lite``.
 
 How to test
 -----------
@@ -218,15 +215,13 @@ the building requirements and then execute the build module:
 Documentation and issues
 ------------------------
 
-Documentation for the latest stable release of this package is hosted at
-Mechanical-Env documentation.
+Documentation for the latest stable release of this package can be found in the
+`README.rst <https://github.com/ansys-internal/pymechanical-env#PyMechanical-Env>`
+file.
 
-In the upper right corner of the documentation's title bar, there is an option for
-switching from viewing the documentation for the latest stable release to viewing the
-documentation for the development version or previously released versions.
-
-On the `Mechanical-Env Issues page <https://github.com/ansys-internal/pymechanical-env/issues>`_,
-you can create issues to report bugs and request new features. On the Mechanical-Env Discussions
+On the `PyMechanical-Env Issues page <https://github.com/ansys-internal/pymechanical-env/issues>`_,
+you can create issues to report bugs and request new features. On the
+`PyMechanical-Env Discussions <https://github.com/ansys-internal/pymechanical-env/discussions>`_
 page or the `Discussions page <https://discuss.ansys.com/>`_ on the Ansys Developer portal, you
 can post questions, share ideas, and get community feedback.
 
@@ -235,12 +230,12 @@ To reach the project support team, email `pyansys.core@ansys.com <pyansys.core@a
 License and acknowledgments
 ---------------------------
 
-Mechanical-Env is licensed under the `MIT license <https://github.com/ansys/pymechanical-env/blob/main/LICENSE>`_.
+PyMechanical-Env is licensed under the `MIT license <https://github.com/ansys/pymechanical-env/blob/main/LICENSE>`_.
 
 For more information, see the `.reuse/dep5 file <https://github.com/ansys/pymechanical-env/blob/main/.reuse/dep5>`_
 file, which follows the `Reuse specification <https://reuse.software/spec/>`_.
 
-Mechanical-Env makes no commercial claim over Ansys whatsoever. This tool supports
+PyMechanical-Env makes no commercial claim over Ansys whatsoever. This tool supports
 `PyMechanical <https://github.com/ansys/pymechanical>`_, which extends the functionality
 of Ansys Mechanical by adding a Python interface to the Mechanical service without changing
 the core behavior or license of the original software. The use of PyMechanical with an embedded
