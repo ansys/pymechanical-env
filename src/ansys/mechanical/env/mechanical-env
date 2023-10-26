@@ -30,19 +30,19 @@ fi
 
 # Check if at least one argument was provided
 if [ $# -lt 1 ]; then
-    echo "Usage: mechanical-env [-r REVISION] [COMMAND]"
+    echo "Usage: mechanical-env [-r version] [COMMAND]"
     exit 1
 fi
 
 # Initialize variables
-revision=""
+version=""
 command=""
 
 # Process command line arguments
 while [ "$#" -gt 0 ]; do
     case "$1" in
-        -r|--revision)
-            revision="$2"
+        -r|--version)
+            version="$2"
             shift 2
             ;;
         *)
@@ -54,13 +54,13 @@ done
 
 # Check if a command was provided
 if [ -z "$command" ]; then
-    echo "Usage: mechanical-env [-r REVISION] [COMMAND]"
+    echo "Usage: mechanical-env [-r version] [COMMAND]"
     exit 1
 fi
 
 # Determine the appropriate command to run the find-mechanical command
-if [ -n "$revision" ]; then
-    find_mechanical_command="find-mechanical -r $revision"
+if [ -n "$version" ]; then
+    find_mechanical_command="find-mechanical -r $version"
 else
     find_mechanical_command="find-mechanical"
 fi
@@ -141,12 +141,12 @@ LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
 
 # Add extra path to the dynamic library load path if version is 241
 if [ "$version" = "241"  ]; then
-    # Updating for Revision 241
+    # Updating for version 241
     LD_LIBRARY_PATH=${LD_LIBRARY_PATH}\
 :${!awp_root}/tp/nss/3.89/lib\
 :${!awp_root}/tp/IntelCompiler/2023.1.0/linx64/lib/intel64
 else
-    # For revision < 241 (mainly 232)
+    # For version < 241 (mainly 232)
     LD_LIBRARY_PATH=${LD_LIBRARY_PATH}\
 :${!awp_root}/tp/IntelCompiler/2019.3.199/linx64/lib/intel64
 fi

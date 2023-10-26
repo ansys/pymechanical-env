@@ -31,21 +31,21 @@ import click
 @click.help_option("--help", "-h")
 @click.option(
     "-r",
-    "--revision",
+    "--version",
     default=None,
     type=int,
-    help='Ansys revision number, such as "241" or "232".\
-         If a revision number is not specified, git it uses the default from \
+    help='Ansys version number, such as "241" or "232".\
+         If a version number is not specified, git it uses the default from \
             ansys-tools-path.',
 )
-def cli_find_mechanical(revision: int):
+def cli_find_mechanical(version: int):
     """
     Use the CLI tool to find the Mechanical version and location.
 
     Parameters
     ----------
-    revision : int
-        Ansys revision number.
+    version: int
+        Ansys version number.
 
     Example
     -------
@@ -53,11 +53,11 @@ def cli_find_mechanical(revision: int):
 
     >>> find-mechanical -r 232
     """
-    # Get the revision number
-    if not revision:
+    # Get the version number
+    if not version:
         exe, version = atp.find_mechanical()
     else:
-        exe, version = atp.find_mechanical(version=revision)
+        exe, version = atp.find_mechanical(version=version)
     version = int(version * 10)
 
     aisol_path = os.path.dirname(exe)
