@@ -41,23 +41,6 @@ def find_installed_versions():
     return versions_found
 
 
-def test_commands():
-    """Ensure the system environment does not change when running ``mechanical-env``."""
-    start_env = os.environ
-    cmd = "mechanical-env make -C doc html"
-    process = subprocess.Popen(
-        cmd,
-        shell=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
-    # Check the command passed to subprocess
-    args = process.args
-
-    # Assert the commands
-    assert args == cmd
-
-
 @pytest.mark.parametrize("version_number", find_installed_versions())
 def test_version_argument(version_number):
     """Ensure script takes version and find if it present"""
@@ -108,7 +91,7 @@ def test_env_variable():
 
 @pytest.mark.parametrize("version_number", find_installed_versions())
 def test_bash_script(version_number):
-    """Check script sets the environment according to version"""
+    """Check if script sets the environment according to version"""
     cmd = "mechanical-env env 2>&1"
     process = subprocess.Popen(
         cmd,

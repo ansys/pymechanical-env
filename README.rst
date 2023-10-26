@@ -32,10 +32,11 @@ Pyansys-mechanical-env library
 
 Overview
 --------
-``ansys-mechanical-env`` supports ``PyMechanical`` in Linux environment.
+``ansys-mechanical-env`` facilitates the integration of ``PyMechanical`` within a Linux environment..
 
-- Finds the version and location of mechanical or gives user an option to provide version number to find the location
-- Loads all environment variable necessary for PyMechanical.
+- Automatically determine the version and location of the ANSYS Mechanical software.
+- Offers users the option to manually specify the version number.
+- Configure and set all the requisite environment variables.
 
 
 How to install
@@ -193,20 +194,3 @@ the building requirements and then executing the build module:
 .. _pytest: https://docs.pytest.org/en/stable/
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _tox: https://tox.wiki/
-
-License and acknowledgments
----------------------------
-``ansys-mechanical-env`` is licensed under
-the `MIT license <https://github.com/ansys/pymechanical-env/blob/main/LICENSE>`_.
-
-Please see the `.reuse/dep5 file <https://github.com/ansys/pymechanical-env/blob/main/.reuse/dep5>`_ file for more details, which
-follows the `Reuse specification <https://reuse.software/spec/>`_.
-``ansys-mechanical-env`` package makes no commercial claim over Ansys
-whatsoever.  This tool supports ``ansys-mechanical-core`` which extends
-the functionality of ``ANSYS MECHANICAL`` by adding a Python interface
-to the MECHANICAL service without changing the core behavior or
-license of the original software.  The use of the ``ansys-mechanical-core``
-with embedded or remote instance requires a legally licensed
-local copy of Ansys.
-
-To get a copy of Ansys, visit `Ansys <https://www.ansys.com/>`_.

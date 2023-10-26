@@ -20,6 +20,7 @@ setup(
     license_file="LICENSE",
     description="A python wrapper for loading environment variables when using PyMechanical",
     long_description=open("README.rst").read(),
+    long_description_content_type="text/x-rst",
     python_requires=">=3.8",
     packages=find_namespace_packages(where="src", include="ansys*"),
     package_dir={"": "src"},

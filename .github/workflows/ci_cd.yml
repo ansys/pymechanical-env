@@ -77,22 +77,11 @@ jobs:
           pip3 install --upgrade pip
           pip3 install -r requirements/requirements_tests.txt
           pip3 install .
-      - name: Unit Testing and coverage
-        run: |
-          pytest > pytest_output.txt || true
-          cat pytest_output.txt
-          #
-          # Check if failure occurred
-          #
-          output=$(grep -c "FAILURE\|ERROR" pytest_output.txt || true)
-          if [ $output -eq 0 ]; then
-            echo "Pytest execution succeeded"
-            exit 0
-          else
-            echo "Pytest execution failed"
-            exit 1
-          fi
-          pytest --cov=ansys.mechanical.env
+
+      - name: Pytests and coverage
+        uses: ansys/actions/tests-pytest@v4
+        with:
+          pytest-extra-args: "--cov=ansys.pre_commit_hooks --cov-report=term --cov-report=html:.cov/html"
 
   test_241:
     name: Tests(241)
@@ -134,22 +123,10 @@ jobs:
           pip3 install -r requirements/requirements_tests.txt
           pip3 install .
 
-      - name: Unit Testing and coverage
-        run: |
-          pytest > pytest_output.txt || true
-          cat pytest_output.txt
-          #
-          # Check if failure occurred
-          #
-          output=$(grep -c "ERROR" pytest_output.txt || true)
-          if [ $output -eq 0 ]; then
-            echo "Pytest execution succeeded"
-            exit 0
-          else
-            echo "Pytest execution failed"
-            exit 1
-          fi
-          pytest --cov=ansys.mechanical.env
+      - name: Pytests and coverage
+        uses: ansys/actions/tests-pytest@v4
+        with:
+          pytest-extra-args: "--cov=ansys.pre_commit_hooks --cov-report=term --cov-report=html:.cov/html"
 
   package:
     name: Package library
