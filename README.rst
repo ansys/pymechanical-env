@@ -33,15 +33,11 @@ Mechanical-Env
 Overview
 --------
 
-Mechanical-Env is a command-line tool to support launching and testing embedded instances
-of `PyMechanical <https://github.com/ansys/pymechanical>`_ on Linux operating systems. The
-``ansys-mechanical-env``` package, which is only intended for use on Linux, is used along with
-the ``ansys-mechanical-core`` package for PyMechanical to provide the following capabilities:
+``ansys-mechanical-env`` facilitates the integration of ``PyMechanical`` within a Linux environment.
 
-- Find the version and location of the Mechanical installation on the system.
-- Find the location of the Mechanical installation given a user-specified version.
-- Load all environment variables necessary for executing embedded instances of PyMechanical
-  on Linux.
+- Automatically determine the version and location of the ANSYS Mechanical software.
+- Offers users the option to manually specify the version number.
+- Configure and set all the requisite environment variables.
 
 Installation
 ------------
