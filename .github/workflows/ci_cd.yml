@@ -92,14 +92,7 @@ jobs:
             echo "Pytest execution failed"
             exit 1
           fi
-
-      - name: Upload coverage results
-        uses: actions/upload-artifact@v3
-        if: env.MAIN_PYTHON_VERSION == matrix.python-version
-        with:
-          name: coverage-tests-232
-          path: .cov
-          retention-days: 7
+          pytest --cov=ansys.mechanical.env
 
   test_241:
     name: Tests(241)
@@ -156,14 +149,7 @@ jobs:
             echo "Pytest execution failed"
             exit 1
           fi
-
-      - name: Upload coverage results
-        uses: actions/upload-artifact@v3
-        if: env.MAIN_PYTHON_VERSION == matrix.python-version
-        with:
-          name: coverage-tests-242
-          path: .cov
-          retention-days: 7
+          pytest --cov=ansys.mechanical.env
 
   package:
     name: Package library

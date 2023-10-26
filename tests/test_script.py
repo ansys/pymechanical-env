@@ -26,11 +26,6 @@ import subprocess
 import ansys.tools.path as atp
 import pytest
 
-# script_directory = os.path.abspath(
-#     os.path.join(os.path.dirname(__file__), "../src/ansys/mechanical/env")
-# # )
-# script_path = "mechanical-env"
-
 
 def find_installed_versions():
     """Finds all the installed version of Mechanical."""
@@ -129,7 +124,7 @@ def test_bash_script(version_number):
     # Check variable specific to revision 232
     if version_number == 232:
         print(version_number)
-        assert "/tp/nss/3.89/lib" and "/tp/IntelCompiler/2023.1.0/linx64/lib/intel64" in str(stdout)
+        assert "/tp/IntelCompiler/2019.3.199/linx64/lib/intel64" in str(stdout)
     # Check variable specific to revision 241
     if version_number == 241:
         print(version_number)
