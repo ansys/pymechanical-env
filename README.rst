@@ -53,13 +53,13 @@ have the latest version of `pip`_ with this command:
 
 .. code:: bash
 
-    python -m pip install -U pip
+ python -m pip install -U pip
 
 Then, install the ``ansys-mechanical-env`` package with this command:
 
 .. code:: bash
 
-    python -m pip install ansys-mechanical-env
+ python -m pip install ansys-mechanical-env
 
 Install in developer mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,7 +75,7 @@ To install the ``ansys-mechanical-env`` package in developer mode, perform these
 #. Clone the ``PyMechanical-Env`` repository with this command:
 
    .. code:: bash
-
+   
       git clone https://github.com/ansys/pymechanical-env
 
 #. Create a clean Python environment and activate it with these commands:
@@ -106,7 +106,7 @@ To install the ``ansys-mechanical-env`` package in developer mode, perform these
 
 #. Install the project in editable mode with this command:
 
-    .. code:: bash
+   .. code:: bash
 
       python -m pip install --editable ansys-mechanical-env
 
@@ -126,25 +126,25 @@ of PyMechanical on Linux.
 Launching a Python shell containing environment variables set up by ``PyMechanical-Env``
 allows you to run embedded instances of PyMechanical on Linux.
 
-Launch the Python shell with this command.
+Launch the Python shell with the following command:
 
-..code:: bash
+.. code:: bash
 
-    mechanical-env python
+   mechanical-env python
 
 In the Python shell, use this code to run an embedded instance of PyMechanical.
 
-..code:: python
+.. code:: python
 
-    >>> import ansys.mechanical.core as pymechanical
-    >>> app = pymechanical.App()
-    >>> print(app)
+   import ansys.mechanical.core as pymechanical
+   app = pymechanical.App()
+   print(app)
 
 Run all embedding tests in the PyMechanical repository with this command:
 
-  ..code:: bash
+.. code:: bash
 
-     xvfb-run mechanical-env pytest -m embedding
+   xvfb-run mechanical-env pytest -m embedding
 
 How to test
 -----------
