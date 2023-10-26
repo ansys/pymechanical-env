@@ -81,7 +81,8 @@ jobs:
       - name: Pytests and coverage
         uses: ansys/actions/tests-pytest@v4
         with:
-          pytest-extra-args: "--cov=ansys.pre_commit_hooks --cov-report=term --cov-report=html:.cov/html"
+          python-version: ${{ matrix.python-version }}
+          pytest-extra-args: "--cov=ansys.mechanical.env --cov-report=term --cov-report=html:.cov/html"
 
   test_241:
     name: Tests(241)
