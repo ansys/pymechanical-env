@@ -35,7 +35,7 @@ import click
     default=None,
     type=int,
     help='Ansys version number, such as "241" or "232".\
-         If a version number is not specified, git it uses the default from \
+         If a version number is not specified, it uses the default from \
             ansys-tools-path.',
 )
 def cli_find_mechanical(version: int):
