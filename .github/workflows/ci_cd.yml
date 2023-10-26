@@ -82,6 +82,7 @@ jobs:
         uses: ansys/actions/tests-pytest@v4
         with:
           python-version: ${{ matrix.python-version }}
+          use-python-cache: false
           pytest-extra-args: "--cov=ansys.mechanical.env --cov-report=term --cov-report=html:.cov/html"
 
   test_241:
@@ -122,12 +123,12 @@ jobs:
         run: |
           pip3 install --upgrade pip
           pip3 install -r requirements/requirements_tests.txt
-          pip3 install .
 
       - name: Pytests and coverage
-        uses: ansys/actions/tests-pytest@v4
-        with:
-          pytest-extra-args: "--cov=ansys.pre_commit_hooks --cov-report=term --cov-report=html:.cov/html"
+        run: |
+          pip3 install .
+          pytest -v
+          pytest --cov=ansys.mechanical.env
 
   package:
     name: Package library
