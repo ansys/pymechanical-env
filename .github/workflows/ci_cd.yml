@@ -80,8 +80,7 @@ jobs:
       - name: Pytests and coverage
         run: |
           pip3 install .
-          pytest -v
-          pytest --cov=ansys.mechanical.env
+          pytest -v --cov=ansys.mechanical.env
 
   test_241:
     name: Tests(241)
@@ -125,8 +124,7 @@ jobs:
       - name: Pytests and coverage
         run: |
           pip3 install .
-          pytest -v
-          pytest --cov=ansys.mechanical.env
+          pytest -v --cov=ansys.mechanical.env
 
   package:
     name: Package library

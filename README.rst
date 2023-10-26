@@ -32,7 +32,7 @@ Pyansys-mechanical-env library
 
 Overview
 --------
-``ansys-mechanical-env`` facilitates the integration of ``PyMechanical`` within a Linux environment..
+``ansys-mechanical-env`` facilitates the integration of ``PyMechanical`` within a Linux environment.
 
 - Automatically determine the version and location of the ANSYS Mechanical software.
 - Offers users the option to manually specify the version number.
