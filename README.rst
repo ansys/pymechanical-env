@@ -33,10 +33,11 @@ PyMechanical-Env
 Overview
 --------
 
-``ansys-mechanical-env`` facilitates the integration of ``PyMechanical`` within a Linux environment.
+``PyMechanical-Env`` contains a package, ``ansys-mechanical-env``, that facilitates the integration
+of ``PyMechanical`` within a Linux environment. The package has the ability to:
 
-- Automatically determine the version and location of the ANSYS Mechanical software.
-- Offer users the option to manually specify the version number.
+- Automatically determine the version and location of the Ansys Mechanical software.
+- Offer users the option to manually specify the version number for Mechanical.
 - Configure and set the requisite environment variables.
 
 Installation
@@ -71,7 +72,7 @@ Before contributing to the project, ensure that you are thoroughly familiar with
 
 To install the ``ansys-mechanical-env`` package in developer mode, perform these steps:
 
-#. Clone the ``pymechanical-env`` repository with this command:
+#. Clone the ``PyMechanical-Env`` repository with this command:
 
    .. code:: bash
 
@@ -119,10 +120,10 @@ Basic usage
 -----------
 
 Once the ``ansys-mechanical-env`` and ``ansys-mechanical-core`` packages are installed,
-you can run the PyMechanical-Env command-line tool to launch and test embedded instances
+you can run the ``PyMechanical-Env`` command-line tool to launch and test embedded instances
 of PyMechanical on Linux.
 
-Launching a Python shell containing environment variables set up by PyMechanical-Env
+Launching a Python shell containing environment variables set up by ``PyMechanical-Env``
 allows you to run embedded instances of PyMechanical on Linux.
 
 Launch the Python shell with this command.
@@ -230,12 +231,12 @@ To reach the project support team, email `pyansys.core@ansys.com <pyansys.core@a
 License and acknowledgments
 ---------------------------
 
-PyMechanical-Env is licensed under the `MIT license <https://github.com/ansys/pymechanical-env/blob/main/LICENSE>`_.
+``PyMechanical-Env`` is licensed under the `MIT license <https://github.com/ansys/pymechanical-env/blob/main/LICENSE>`_.
 
 For more information, see the `.reuse/dep5 file <https://github.com/ansys/pymechanical-env/blob/main/.reuse/dep5>`_
 file, which follows the `Reuse specification <https://reuse.software/spec/>`_.
 
-PyMechanical-Env makes no commercial claim over Ansys whatsoever. This tool supports
+``PyMechanical-Env`` makes no commercial claim over Ansys whatsoever. This tool supports
 `PyMechanical <https://github.com/ansys/pymechanical>`_, which extends the functionality
 of Ansys Mechanical by adding a Python interface to the Mechanical service without changing
 the core behavior or license of the original software. The use of PyMechanical with an embedded
