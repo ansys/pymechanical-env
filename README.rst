@@ -75,7 +75,7 @@ To install the ``ansys-mechanical-env`` package in developer mode, perform these
 #. Clone the ``PyMechanical-Env`` repository with this command:
 
    .. code:: bash
-   
+
       git clone https://github.com/ansys/pymechanical-env
 
 #. Create a clean Python environment and activate it with these commands:
