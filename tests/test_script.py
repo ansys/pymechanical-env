@@ -52,6 +52,8 @@ def test_version_argument(version_number):
         stderr=subprocess.PIPE,
     )
     stdout, stderr = process.communicate()
+
+    # Assert no error after running script
     assert stderr is None or stderr == b""
 
 
@@ -102,15 +104,15 @@ def test_bash_script(version_number):
     stdout, stderr = process.communicate()
     return_code = process.returncode
 
-    # Check for AWP_ROOT variable which created by script
+    # Assert for AWP_ROOT variable which created by script
     assert f"AWP_ROOT{version_number}=/install/ansys_inc/v{version_number}/aisol/.." in str(stdout)
-    # Check variable specific to revision 232
+    # Assert variable specific to revision 232
     if version_number == 232:
         print(version_number)
         assert "/tp/IntelCompiler/2019.3.199/linx64/lib/intel64" in str(stdout)
-    # Check variable specific to revision 241
+    # Assert variable specific to revision 241
     if version_number == 241:
         print(version_number)
         assert "/tp/nss/3.89/lib" and "/tp/IntelCompiler/2023.1.0/linx64/lib/intel64" in str(stdout)
-    # Check if the script returned successfully
+    # Assert if the script returned successfully
     assert return_code == 0
