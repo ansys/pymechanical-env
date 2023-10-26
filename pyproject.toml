@@ -13,7 +13,7 @@ default_section = "THIRDPARTY"
 src_paths = ["doc", "src", "tests"]
 
 [tool.coverage.run]
-source = ["ansys.ansys_mechanical_env"]
+source = ["ansys-mechanical-env"]
 
 [tool.coverage.report]
 show_missing = true
