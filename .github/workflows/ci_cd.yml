@@ -150,11 +150,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+
+      - run: mkdir -p doc/_build/html/
+
+      - run: echo "No documentation needed" > doc/_build/html/doc.txt
+
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v3
         with:
           name: documentation-html
-          path: doc/_build/html/index.html
+          path: doc/_build/html/doc.txt
           retention-days: 7
 
   release:
