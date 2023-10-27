@@ -45,7 +45,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
+        os:  [ubuntu-latest, windows-latest, macos-latest]
         python-version: ['3.9', '3.10', '3.11', '3.12']
         should-release:
           - ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags') }}
@@ -57,18 +57,19 @@ jobs:
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
 
-  test_232:
-    name: Tests(232)
+  tests:
+    name: Unit tests and coverage
     runs-on: ubuntu-latest
-    needs: [style, doc-style]
-    container:
-      image: ghcr.io/ansys/mechanical:23.2.0
-      options: --entrypoint /bin/bash
+    needs: [smoke-tests]
     strategy:
       max-parallel: 2
       fail-fast: false
       matrix:
         python-version: ['3.9', '3.10', '3.11', '3.12']
+        containers: ['23.2.0', '24.1.0']
+    container:
+      image: ghcr.io/ansys/mechanical:${{ matrix.containers }}
+      options: --entrypoint /bin/bash
 
     steps:
       - uses: actions/checkout@v4
@@ -94,55 +95,6 @@ jobs:
         run: |
           pip3 install .
           pytest -v --cov=ansys.mechanical.env
-
-  test_241:
-    name: Tests(241)
-    runs-on: ubuntu-latest
-    needs: [style, doc-style]
-    container:
-      image: ghcr.io/ansys/mechanical:24.1.0
-      options: --entrypoint /bin/bash
-    strategy:
-      max-parallel: 2
-      fail-fast: false
-      matrix:
-        python-version: ['3.9', '3.10', '3.11', '3.12']
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up python and pip
-        run: |
-          apt update
-          apt install software-properties-common -y
-          add-apt-repository ppa:deadsnakes/ppa -y
-          apt install python${{ matrix.python-version }} -y
-          ln -s /usr/bin/python${{ matrix.python-version }} /usr/bin/python
-          apt install python${{ matrix.python-version }}-venv -y
-
-      - name: Install pip for >3.8
-        run: |
-          python -m ensurepip --default-pip
-
-      - name: Upgrade pip and install packages for testing
-        run: |
-          pip3 install --upgrade pip
-          pip3 install -r requirements/requirements_tests.txt
-
-      - name: Pytests and coverage
-        run: |
-          pip3 install .
-          pytest -v --cov=ansys.mechanical.env
-
-  package:
-    name: Build package
-    needs: [test_232, test_241]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build library source and wheel artifacts
-        uses: ansys/actions/build-library@v4
-        with:
-          library-name: ${{ env.PACKAGE_NAME }}
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
   doc-build:
     name: Documentation building
@@ -171,6 +123,17 @@ jobs:
           name: documentation-pdf
           path: doc/_build/latex/doc.pdf
           retention-days: 7
+
+  package:
+    name: Build package
+    needs: [tests, doc-build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build library source and wheel artifacts
+        uses: ansys/actions/build-library@v4
+        with:
+          library-name: ${{ env.PACKAGE_NAME }}
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
   release:
     name: Release project
