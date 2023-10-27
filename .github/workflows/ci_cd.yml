@@ -152,22 +152,25 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: mkdir -p doc/_build/
+      - run: |
+          mkdir -p doc/_build/html
+          mkdir -p doc/_build/latex
 
-      - run: touch doc/_build/doc.txt
+          touch doc/_build/html/doc.txt
+          touch doc/_build/latex/doc.pdf
 
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v3
         with:
           name: documentation-html
-          path: doc/_build/doc.txt
+          path: doc/_build/html/doc.txt
           retention-days: 7
 
       - name: Upload PDF Documentation
         uses: actions/upload-artifact@v3
         with:
           name: documentation-pdf
-          path: doc/_build/doc.txt
+          path: doc/_build/latex/doc.pdf
           retention-days: 7
 
   release:
