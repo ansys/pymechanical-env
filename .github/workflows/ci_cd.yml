@@ -127,7 +127,7 @@ jobs:
           pytest -v --cov=ansys.mechanical.env
 
   package:
-    name: Package library
+    name: Build package
     needs: [test_232, test_241]
     runs-on: ubuntu-latest
     steps:
