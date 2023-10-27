@@ -144,6 +144,19 @@ jobs:
           library-name: ${{ env.PACKAGE_NAME }}
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
+  doc-build:
+    name: Documentation building
+    needs: [style, doc-style]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Upload HTML Documentation
+        uses: actions/upload-artifact@v3
+        with:
+          name: documentation-html
+          path: doc/_build/html
+          retention-days: 7
+
   release:
     name: Release project
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
