@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ['3.8', '3.9', '3.10', '3.11']
+        python-version: ['3.9', '3.10', '3.11', '3.12']
         should-release:
           - ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags') }}
     steps:
@@ -68,7 +68,7 @@ jobs:
       max-parallel: 2
       fail-fast: false
       matrix:
-        python-version: ['3.8', '3.9', '3.10', '3.11']
+        python-version: ['3.9', '3.10', '3.11', '3.12']
 
     steps:
       - uses: actions/checkout@v4
@@ -81,13 +81,7 @@ jobs:
           ln -s /usr/bin/python${{ matrix.python-version }} /usr/bin/python
           apt install python${{ matrix.python-version }}-venv -y
 
-      - name: Install pip
-        if: matrix.python-version == '3.8'
-        run: |
-          apt install -y python3-pip
-
       - name: Install pip for >3.8
-        if: matrix.python-version != '3.8'
         run: |
           python -m ensurepip --default-pip
 
@@ -112,7 +106,7 @@ jobs:
       max-parallel: 2
       fail-fast: false
       matrix:
-        python-version: ['3.8', '3.9', '3.10', '3.11']
+        python-version: ['3.9', '3.10', '3.11', '3.12']
 
     steps:
       - uses: actions/checkout@v4
@@ -125,13 +119,7 @@ jobs:
           ln -s /usr/bin/python${{ matrix.python-version }} /usr/bin/python
           apt install python${{ matrix.python-version }}-venv -y
 
-      - name: Install pip
-        if: matrix.python-version == '3.8'
-        run: |
-          apt install -y python3-pip
-
       - name: Install pip for >3.8
-        if: matrix.python-version != '3.8'
         run: |
           python -m ensurepip --default-pip
 

@@ -11,7 +11,7 @@ PyMechanical-Env
    :alt: Python
 
 .. |pypi| image:: https://img.shields.io/pypi/v/ansys-mechanical-env.svg?logo=python&logoColor=white
-   :target: https://pypi.org/project/pymechanical-env
+   :target: https://pypi.org/project/ansys-mechanical-env
    :alt: PyPI
 
 .. |GH-CI| image:: https://github.com/ansys/pymechanical-env/actions/workflows/ci_cd.yml/badge.svg
@@ -33,8 +33,8 @@ PyMechanical-Env
 Overview
 --------
 
-``PyMechanical-Env`` contains a package, ``ansys-mechanical-env``, that facilitates the integration
-of ``PyMechanical`` within a Linux environment. The package has the ability to:
+PyMechanical-Env contains a package, ``ansys-mechanical-env``, that facilitates the integration
+of PyMechanical within a Linux environment. The package has the ability to:
 
 - Automatically determine the version and location of the Ansys Mechanical software.
 - Offer users the option to manually specify the version number for Mechanical.
@@ -72,7 +72,7 @@ Before contributing to the project, ensure that you are thoroughly familiar with
 
 To install the ``ansys-mechanical-env`` package in developer mode, perform these steps:
 
-#. Clone the ``PyMechanical-Env`` repository with this command:
+#. Clone the PyMechanical-Env repository with this command:
 
    .. code:: bash
 
@@ -120,19 +120,19 @@ Basic usage
 -----------
 
 Once the ``ansys-mechanical-env`` and ``ansys-mechanical-core`` packages are installed,
-you can run the ``PyMechanical-Env`` command-line tool to launch and test embedded instances
+you can run the PyMechanical-Env command-line tool to launch and test embedded instances
 of PyMechanical on Linux.
 
-Launching a Python shell containing environment variables set up by ``PyMechanical-Env``
+Launching a Python shell containing environment variables set up by PyMechanical-Env
 allows you to run embedded instances of PyMechanical on Linux.
 
-Launch the Python shell with the following command:
+Launch the Python shell with this command:
 
 .. code:: bash
 
    mechanical-env python
 
-In the Python shell, use this code to run an embedded instance of PyMechanical.
+In the Python shell, use this code to run an embedded instance of PyMechanical:
 
 .. code:: python
 
@@ -158,12 +158,11 @@ Using ``tox``
 
 As Makefile has rules, ``tox`` has environments. In fact, ``tox`` creates its
 own virtual environment so anything being tested is isolated from the project to
-guarantee the project's integrity. These environments commands are provided:
+guarantee the project's integrity. These environment commands are provided:
 
 - **tox -e style**: Checks for coding style quality.
 - **tox -e py**: Checks for unit tests.
 - **tox -e py-coverage**: Checks for unit testing and code coverage.
-- **tox -e doc**: Checks for documentation-building process.
 
 Raw testing
 ^^^^^^^^^^^
@@ -183,24 +182,6 @@ encouraged to install this tool with this command:
 
     python -m pip install pre-commit && pre-commit install
 
-Documentation
--------------
-
-For building documentation, you can run the usual rules provided in the
-`Sphinx`_ Makefile with this command:
-
-.. code:: bash
-
-    make -C doc/ html && your_browser_name doc/html/index.html
-
-However, the recommended way of checking documentation integrity is to use ``tox``
-by running this command:
-
-.. code:: bash
-
-    tox -e doc && your_browser_name .tox/doc_out/index.html
-
-
 Distributing
 ------------
 
@@ -216,9 +197,8 @@ the building requirements and then execute the build module:
 Documentation and issues
 ------------------------
 
-Documentation for the latest stable release of this package can be found in the
-`README.rst <https://github.com/ansys-internal/pymechanical-env#PyMechanical-Env>`
-file.
+Documentation for the latest stable release of this package can be found in this
+README file.
 
 On the `PyMechanical-Env Issues page <https://github.com/ansys-internal/pymechanical-env/issues>`_,
 you can create issues to report bugs and request new features. On the
@@ -231,12 +211,12 @@ To reach the project support team, email `pyansys.core@ansys.com <pyansys.core@a
 License and acknowledgments
 ---------------------------
 
-``PyMechanical-Env`` is licensed under the `MIT license <https://github.com/ansys/pymechanical-env/blob/main/LICENSE>`_.
+PyMechanical-Env is licensed under the `MIT license <https://github.com/ansys/pymechanical-env/blob/main/LICENSE>`_.
 
 For more information, see the `.reuse/dep5 file <https://github.com/ansys/pymechanical-env/blob/main/.reuse/dep5>`_
 file, which follows the `Reuse specification <https://reuse.software/spec/>`_.
 
-``PyMechanical-Env`` makes no commercial claim over Ansys whatsoever. This tool supports
+PyMechanical-Env makes no commercial claim over Ansys whatsoever. This tool supports
 `PyMechanical <https://github.com/ansys/pymechanical>`_, which extends the functionality
 of Ansys Mechanical by adding a Python interface to the Mechanical service without changing
 the core behavior or license of the original software. The use of PyMechanical with an embedded

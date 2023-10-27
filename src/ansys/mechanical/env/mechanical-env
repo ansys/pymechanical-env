@@ -30,7 +30,10 @@ fi
 
 # Check if at least one argument was provided
 if [ $# -lt 1 ]; then
-    echo "Usage: mechanical-env [-r version] [COMMAND]"
+    echo "Usage:"
+    echo "    mechanical-env [-r version] [COMMAND]"
+    echo "Example:"
+    echo "    mechanical-env -r 241 python"
     exit 1
 fi
 
