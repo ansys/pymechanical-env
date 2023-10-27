@@ -152,15 +152,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: mkdir -p doc/_build/html/
+      - run: mkdir -p doc/_build/
 
-      - run: echo "No documentation needed" > doc/_build/html/doc.txt
+      - run: touch doc/_build/doc.txt
 
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v3
         with:
           name: documentation-html
-          path: doc/_build/html/doc.txt
+          path: doc/_build/doc.txt
+          retention-days: 7
+
+      - name: Upload PDF Documentation
+        uses: actions/upload-artifact@v3
+        with:
+          name: documentation-pdf
+          path: doc/_build/doc.txt
           retention-days: 7
 
   release:
