@@ -155,7 +155,6 @@ jobs:
       - run: |
           mkdir -p doc/_build/html
           mkdir -p doc/_build/latex
-
           touch doc/_build/html/doc.txt
           touch doc/_build/latex/doc.pdf
 
