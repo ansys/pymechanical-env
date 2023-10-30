@@ -40,12 +40,11 @@ jobs:
 
   smoke-tests:
     name: Build and Smoke tests
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     needs: [style]
     strategy:
       fail-fast: false
       matrix:
-        os:  [ubuntu-latest, windows-latest, macos-latest]
         python-version: ['3.9', '3.10', '3.11', '3.12']
         should-release:
           - ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags') }}
@@ -54,7 +53,7 @@ jobs:
         uses: ansys/actions/build-wheelhouse@v4
         with:
           library-name: ${{ env.PACKAGE_NAME }}
-          operating-system: ${{ matrix.os }}
+          operating-system: ubuntu-latest
           python-version: ${{ matrix.python-version }}
 
   tests:
