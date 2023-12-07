@@ -4,7 +4,7 @@ from setuptools import find_namespace_packages, setup
 
 setup(
     name="ansys-mechanical-env",
-    version="0.1.dev0",
+    version="0.1.0",
     url="https://github.com/ansys/pymechanical-env",
     author="ANSYS, Inc.",
     author_email="pyansys.core@ansys.com",
@@ -18,7 +18,8 @@ setup(
     ],
     license="MIT",
     license_file="LICENSE",
-    description="A python wrapper for loading environment variables when using PyMechanical",
+    description="A python wrapper for loading environment variables "
+    "when using PyMechanical embedded instances in Linux.",
     long_description=open("README.rst").read(),
     long_description_content_type="text/x-rst",
     python_requires=">3.8,<4",

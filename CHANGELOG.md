@@ -11,6 +11,17 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 
 ### Fixed
 
+### Changed
+
+### Dependencies
+
+
+## [0.1.0](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.0)
+
+### Added
+
+### Fixed
+
 - Improve the ci/cd tests with the help of matrix style [#8](https://github.com/ansys-internal/pymechanical-env/pull/8)
 
 ### Changed
