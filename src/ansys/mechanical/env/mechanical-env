@@ -122,8 +122,15 @@ export MWUSER_DIRECTORY
 MWDONT_XCLOSEDISPLAY=1
 export MWDONT_XCLOSEDISPLAY
 
-# Set dynamic library preload
-LD_PRELOAD=libstdc++.so.6.0.28
+# Set dynamic library preload from Ansys unified install
+AnsLibStdCpp="$(find ${!awp_root}/tp/ -maxdepth 2 -type f -name libstdc++.so.6.\* 2>/dev/null | head -1)"
+if [ -n "$AnsLibStdCpp" ]; then
+    AnsLibVersion="$(echo $AnsLibStdCpp | sed -e 's/^.*so.6/6/')"
+    # Set LD_PRELOAD with the library name and version
+    LD_PRELOAD="libstdc++.so.$AnsLibVersion"
+else
+    echo "Warning: Could not find libstdc++.so.6 version."
+fi
 export LD_PRELOAD
 
 # Set dynamic library load path
