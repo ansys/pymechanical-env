@@ -122,8 +122,8 @@ export MWUSER_DIRECTORY
 MWDONT_XCLOSEDISPLAY=1
 export MWDONT_XCLOSEDISPLAY
 
-# Set dynamic library preload
-LD_PRELOAD=libstdc++.so.6.0.28
+# Set dynamic library preload from Ansys unified install
+LD_PRELOAD=libstdc++.so.6.0.25 # For 232 and 241
 export LD_PRELOAD
 
 # Set dynamic library load path
