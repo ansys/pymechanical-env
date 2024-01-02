@@ -8,6 +8,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ## [Unreleased]()
 
 ### Added
+- Add change log check [#19](https://github.com/ansys/pymechanical-env/pull/19)
 
 ### Fixed
 
