@@ -13,7 +13,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 
 ### Changed
 - Update LD_PRELOAD [#15](https://github.com/ansys/pymechanical-env/pull/15)
-- Update pre-commit and licenses
+- Update pre-commit and licenses [#18](https://github.com/ansys/pymechanical-env/pull/18)
 
 ### Dependencies
 
