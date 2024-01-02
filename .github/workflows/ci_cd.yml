@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: PyAnsys code style checks
-        uses: ansys/actions/code-style@v4
+        uses: ansys/actions/code-style@v5
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
           use-python-cache: false
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: PyAnsys documentation style checks
-        uses: ansys/actions/doc-style@v4
+        uses: ansys/actions/doc-style@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -50,11 +50,50 @@ jobs:
           - ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags') }}
     steps:
       - name: Build wheelhouse and perform smoke test
-        uses: ansys/actions/build-wheelhouse@v4
+        uses: ansys/actions/build-wheelhouse@v5
         with:
           library-name: ${{ env.PACKAGE_NAME }}
           operating-system: ubuntu-latest
           python-version: ${{ matrix.python-version }}
+
+  changelog-check:
+    name: Changelog Update Check
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.CHANGELOG_TOKEN }}
+
+      - uses: dangoslen/dependabot-changelog-helper@v3
+        if: ${{ github.actor == 'dependabot[bot]' }}
+        with:
+          activationLabel: 'dependabot'
+          changelogPath: './CHANGELOG.md'
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        if: ${{ github.actor == 'dependabot[bot]' }}
+        with:
+          commit_message: "Updated Changelog"
+
+      - name: Get all doc files that have changed
+        id: changed-files-yaml
+        uses: tj-actions/changed-files@v41
+        with:
+          files_yaml: |
+            doc:
+              - 'CHANGELOG.md'
+
+      - name: Check Changelog Edited
+        run: |
+          if [[ "${{ steps.changed-files-yaml.outputs.doc_all_changed_files }}" == "CHANGELOG.md" ]]; then
+              echo "CHANGELOG.md was updated."
+          elif [[ "${{ github.actor }}" == "dependabot[bot]" ]]; then
+              echo "CHANGELOG.md was autoupdated... Workflow will trigger."
+          else
+              echo "Please update CHANGELOG.md before merging the pull request."
+              exit 1
+          fi
 
   tests:
     name: Unit tests and coverage
@@ -110,14 +149,14 @@ jobs:
           touch doc/_build/latex/doc.pdf
 
       - name: Upload HTML Documentation
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: documentation-html
           path: doc/_build/html/doc.txt
           retention-days: 7
 
       - name: Upload PDF Documentation
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: documentation-pdf
           path: doc/_build/latex/doc.pdf
@@ -129,7 +168,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build library source and wheel artifacts
-        uses: ansys/actions/build-library@v4
+        uses: ansys/actions/build-library@v5
         with:
           library-name: ${{ env.PACKAGE_NAME }}
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
@@ -141,13 +180,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Release to the public PyPI repository
-        uses: ansys/actions/release-pypi-public@v4
+        uses: ansys/actions/release-pypi-public@v5
         with:
           library-name: ${{ env.PACKAGE_NAME }}
           twine-username: "__token__"
           twine-token: ${{ secrets.PYPI_TOKEN }}
 
       - name: Release to GitHub
-        uses: ansys/actions/release-github@v4
+        uses: ansys/actions/release-github@v5
         with:
           library-name: ${{ env.PACKAGE_NAME }}

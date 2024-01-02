@@ -1,5 +1,5 @@
 ansys-tools-path>=0.3.1
 psutil>=5.9.1
-pytest==7.4.3
+pytest==7.4.4
 pytest-cov==4.1.0
 pytest-mock==3.12.0
