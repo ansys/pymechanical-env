@@ -17,6 +17,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 - Update pre-commit and licenses [#18](https://github.com/ansys/pymechanical-env/pull/18)
 
 ### Dependencies
+- Bump `pytest` from 7.4.3 to 7.4.4 in /requirements [#20](https://github.com/ansys/pymechanical-env/pull/20)
 
 ## [0.1.0](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.0) - December 08, 2023
 
