@@ -8,9 +8,18 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ## [Unreleased]()
 
 ### Added
-- Add change log check [#19](https://github.com/ansys/pymechanical-env/pull/19)
 
 ### Fixed
+
+### Changed
+- Update changelog release 1.1 [#21](https://github.com/ansys/pymechanical-env/pull/21)
+
+### Dependencies
+
+## [0.1.1](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.1) - January 02, 2024
+
+### Added
+- Add change log check [#19](https://github.com/ansys/pymechanical-env/pull/19)
 
 ### Changed
 - Update LD_PRELOAD [#15](https://github.com/ansys/pymechanical-env/pull/15)
@@ -21,11 +30,5 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 
 ## [0.1.0](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.0) - December 08, 2023
 
-### Added
-
 ### Fixed
 - Improve the ci/cd tests with the help of matrix style [#8](https://github.com/ansys-internal/pymechanical-env/pull/8)
-
-### Changed
-
-### Dependencies
