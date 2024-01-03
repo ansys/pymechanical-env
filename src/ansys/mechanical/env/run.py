@@ -55,9 +55,14 @@ def cli_find_mechanical(version: int):
     """
     # Get the version number
     if not version:
-        exe, version = atp.find_mechanical()
+        exe = atp.get_mechanical_path()  # check for saved mechanical path
+        if exe:
+            version = atp.version_from_path("mechanical", exe)
+        else:
+            exe, version = atp.find_mechanical()
     else:
         exe, version = atp.find_mechanical(version=version)
+
     version = int(version * 10)
 
     aisol_path = os.path.dirname(exe)
