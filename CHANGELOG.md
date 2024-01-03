@@ -8,11 +8,13 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ## [Unreleased]()
 
 ### Added
+
 ### Fixed
+
 ### Changed
 - Update changelog release 1.1 [#21](https://github.com/ansys/pymechanical-env/pull/21)
-### Dependencies
 
+### Dependencies
 
 ## [0.1.1](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.1) - January 02, 2024
 
