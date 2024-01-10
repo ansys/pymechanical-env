@@ -122,13 +122,21 @@ export MWUSER_DIRECTORY
 MWDONT_XCLOSEDISPLAY=1
 export MWDONT_XCLOSEDISPLAY
 
-# Set dynamic library preload from Ansys unified install
-LD_PRELOAD=libstdc++.so.6.0.25 # For 232 and 241
-export LD_PRELOAD
+# Set dynamic library preload
+SysLibStdCpp="$(find /usr/lib64 /usr/lib -maxdepth 2 -type f -name libstdc++.so.6.\* 2>/dev/null | head -1)"
+SysLibVersion="$(echo $SysLibStdCpp | sed -e 's/^.*so.6/6/')"
+AnsLibStdCpp="$(find ${!awp_root}/tp/ -maxdepth 2 -type f -name libstdc++.so.6.\* 2>/dev/null | head -1)"
+AnsLibVersion="$(echo $AnsLibStdCpp | sed -e 's/^.*so.6/6/')"
+if [ "$SysLibVersion" != "$AnsLibVersion" -a "$SysLibVersion" '>' "$AnsLibVersion" ] ; then
+  LD_PRELOAD="${SysLibStdCpp##*/}":"$LD_PRELOAD"
+  # if preload was previously empty/nonexistent, delete trailing colon
+  export LD_PRELOAD="${LD_PRELOAD%:}"
+else
+  LD_LIBRARY_PATH=${AWP_ROOT242}/tp/stdc++:${LD_LIBRARY_PATH}
+fi
 
 # Set dynamic library load path
-LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
-:${!awp_root}/tp/openssl/1.1.1/linx64/lib\
+LD_LIBRARY_PATH=${!awp_root}/tp/openssl/1.1.1/linx64/lib\
 :${MWHOME}/lib-amd64_linux\
 :${MWHOME}/lib-amd64_linux_optimized\
 :${LD_LIBRARY_PATH}\
