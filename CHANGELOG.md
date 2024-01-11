@@ -10,12 +10,14 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Added
 
 ### Fixed
-- fix LD_PRELOAD [#25](https://github.com/ansys/pymechanical-env/pull/25)
+- Fix LD_PRELOAD [#25](https://github.com/ansys/pymechanical-env/pull/25)
+- Fixes find mechanical [#23](https://github.com/ansys/pymechanical-env/pull/23)
 
 ### Changed
 - Update changelog release 1.1 [#21](https://github.com/ansys/pymechanical-env/pull/21)
 
 ### Dependencies
+- Update `pre-commit` [#24](https://github.com/ansys/pymechanical-env/pull/24)
 
 ## [0.1.1](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.1) - January 02, 2024
 
