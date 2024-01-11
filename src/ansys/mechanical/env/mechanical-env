@@ -131,12 +131,11 @@ if [ "$SysLibVersion" != "$AnsLibVersion" -a "$SysLibVersion" '>' "$AnsLibVersio
   LD_PRELOAD="${SysLibStdCpp##*/}":"$LD_PRELOAD"
   # if preload was previously empty/nonexistent, delete trailing colon
   export LD_PRELOAD="${LD_PRELOAD%:}"
-else
-  LD_LIBRARY_PATH=${AWP_ROOT242}/tp/stdc++:${LD_LIBRARY_PATH}
 fi
 
 # Set dynamic library load path
-LD_LIBRARY_PATH=${!awp_root}/tp/openssl/1.1.1/linx64/lib\
+LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
+:${!awp_root}/tp/openssl/1.1.1/linx64/lib\
 :${MWHOME}/lib-amd64_linux\
 :${MWHOME}/lib-amd64_linux_optimized\
 :${LD_LIBRARY_PATH}\
