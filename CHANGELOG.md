@@ -5,6 +5,20 @@ project adheres to [Semantic Versioning](https://semver.org/).
 
 This document follows the conventions laid out in [Keep a CHANGELOG](https://keepachangelog.com/en/1.0.0).
 
+## [0.1.2](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.2) - January 11, 2024
+
+### Added
+
+### Fixed
+- Fix LD_PRELOAD [#25](https://github.com/ansys/pymechanical-env/pull/25)
+- Fixes find mechanical [#23](https://github.com/ansys/pymechanical-env/pull/23)
+
+### Changed
+- Update changelog release 1.1 [#21](https://github.com/ansys/pymechanical-env/pull/21)
+
+### Dependencies
+- Update `pre-commit` [#24](https://github.com/ansys/pymechanical-env/pull/24)
+
 ## [0.1.1](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.1) - January 02, 2024
 
 ### Added
@@ -21,3 +35,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 
 ### Fixed
 - Improve the ci/cd tests with the help of matrix style [#8](https://github.com/ansys-internal/pymechanical-env/pull/8)
+
+### Changed
+
+### Dependencies
