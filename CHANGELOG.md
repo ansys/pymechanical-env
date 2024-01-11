@@ -12,7 +12,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Fixed
 
 ### Changed
-- Update changelog release 1.2 [#](https://github.com/ansys/pymechanical-env/pull/)
+- Update changelog release 1.2 [#26](https://github.com/ansys/pymechanical-env/pull/26)
 
 ### Dependencies
 
