@@ -10,6 +10,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Added
 
 ### Fixed
+- Fix LD_PRELOAD [#25](https://github.com/ansys/pymechanical-env/pull/25)
 - Fixes find mechanical [#23](https://github.com/ansys/pymechanical-env/pull/23)
 
 ### Changed
