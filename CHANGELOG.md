@@ -15,6 +15,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 
 ### Dependencies
 - Update `pre-commit` [#27](https://github.com/ansys/pymechanical-env/pull/27)
+- Bump `tj-actions/changed-files` from 41 to 42 ([#28](https://github.com/ansys/pymechanical-env/pull/28))
 
 ## [0.1.2](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.2) - January 11, 2024
 
