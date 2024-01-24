@@ -118,7 +118,7 @@ def test_bash_script(version_number):
         assert "/tp/nss/3.89/lib" and "/tp/IntelCompiler/2023.1.0/linx64/lib/intel64" in str(stdout)
 
     # Assert variable specific to version 242
-    if version_number == 241:
+    if version_number == 242:
         print(version_number)
         assert "/tp/openssl/3.0/linx64/lib" and "/tp/qt/5.15.10/linx64/lib" in str(stdout)
 
