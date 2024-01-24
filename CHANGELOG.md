@@ -8,6 +8,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ## [Unreleased]()
 
 ### Added
+- Update qt and openssl path for 242 [#30](https://github.com/ansys/pymechanical-env/pull/30)
 
 ### Fixed
 
