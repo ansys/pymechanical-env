@@ -14,7 +14,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Changed
 
 ### Dependencies
-- Update `pre-commit` [#27](https://github.com/ansys/pymechanical-env/pull/27)
+- Update `pre-commit` [#27](https://github.com/ansys/pymechanical-env/pull/27), [#33](https://github.com/ansys/pymechanical-env/pull/33)
 - Bump `tj-actions/changed-files` from 41 to 42 ([#28](https://github.com/ansys/pymechanical-env/pull/28))
 - Bump `pytest` from 7.4.4 to 8.0.0 ([#31](https://github.com/ansys/pymechanical-env/pull/31))
 - Bump `peter-evans/create-or-update-comment` from 3 to 4 ([#32](https://github.com/ansys/pymechanical-env/pull/32))
