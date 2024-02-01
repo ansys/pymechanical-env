@@ -45,4 +45,6 @@ repos:
   - id: add-license-headers
     files: '(src|examples|tests)/(?:.*/)*[^./]*(\.py)?$'
     exclude : ^src/ansys/mechanical/env/mechanical-env$
+    args:
+    - --start_year=2023
 

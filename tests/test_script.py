@@ -29,7 +29,7 @@ import pytest
 
 def find_installed_versions():
     """Finds all the installed version of Mechanical."""
-    supported_versions = [231, 232, 241]
+    supported_versions = [232, 241, 242]
     versions_found = []
     for supported_version in supported_versions:
         try:
@@ -106,13 +106,21 @@ def test_bash_script(version_number):
 
     # Assert for AWP_ROOT variable which created by script
     assert f"AWP_ROOT{version_number}=/install/ansys_inc/v{version_number}/aisol/.." in str(stdout)
+
     # Assert variable specific to version 232
     if version_number == 232:
         print(version_number)
         assert "/tp/IntelCompiler/2019.3.199/linx64/lib/intel64" in str(stdout)
+
     # Assert variable specific to version 241
     if version_number == 241:
         print(version_number)
         assert "/tp/nss/3.89/lib" and "/tp/IntelCompiler/2023.1.0/linx64/lib/intel64" in str(stdout)
+
+    # Assert variable specific to version 242
+    if version_number == 242:
+        print(version_number)
+        assert "/tp/openssl/3.0/linx64/lib" and "/tp/qt/5.15.10/linx64/lib" in str(stdout)
+
     # Assert if the script returned successfully
     assert return_code == 0

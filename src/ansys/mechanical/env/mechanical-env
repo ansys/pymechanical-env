@@ -135,7 +135,6 @@ fi
 
 # Set dynamic library load path
 LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
-:${!awp_root}/tp/openssl/1.1.1/linx64/lib\
 :${MWHOME}/lib-amd64_linux\
 :${MWHOME}/lib-amd64_linux_optimized\
 :${LD_LIBRARY_PATH}\
@@ -144,21 +143,28 @@ LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
 :${DS_INSTALL_DIR}/dll/linx64\
 :${DS_INSTALL_DIR}/libshared/linx64\
 :${!awp_root}/tp/IntelMKL/2020.0.166/linx64/lib/intel64\
-:${!awp_root}/tp/qt_fw/5.9.6/Linux64/lib\
 :${!awp_root}/commonfiles/CAD/Acis/linx64\
 :${!awp_root}/commonfiles/fluids/lib/linx64\
 :${!awp_root}/Framework/bin/Linux64
 
-# Add extra path to the dynamic library load path if version is 241
-if [ "$version" = "241"  ]; then
-    # Updating for version 241
+# Add extra path to the dynamic library load path depending on version
+if [ "$version" = "242" ]; then # For version 242
     LD_LIBRARY_PATH=${LD_LIBRARY_PATH}\
 :${!awp_root}/tp/nss/3.89/lib\
-:${!awp_root}/tp/IntelCompiler/2023.1.0/linx64/lib/intel64
-else
-    # For version < 241 (mainly 232)
+:${!awp_root}/tp/IntelCompiler/2023.1.0/linx64/lib/intel64\
+:${!awp_root}/tp/qt/5.15.10/linx64/lib\
+:${!awp_root}/tp/openssl/3.0/linx64/lib
+elif [ "$version" = "241" ]; then # For version 241
     LD_LIBRARY_PATH=${LD_LIBRARY_PATH}\
-:${!awp_root}/tp/IntelCompiler/2019.3.199/linx64/lib/intel64
+:${!awp_root}/tp/nss/3.89/lib\
+:${!awp_root}/tp/IntelCompiler/2023.1.0/linx64/lib/intel64\
+:${!awp_root}/tp/qt_fw/5.9.6/Linux64/lib\
+:${!awp_root}/tp/openssl/1.1.1/linx64/lib
+else  # For version < 241 (mainly 232)
+    LD_LIBRARY_PATH=${LD_LIBRARY_PATH}\
+:${!awp_root}/tp/IntelCompiler/2019.3.199/linx64/lib/intel64\
+:${!awp_root}/tp/qt_fw/5.9.6/Linux64/lib\
+:${!awp_root}/tp/openssl/1.1.1/linx64/lib
 fi
 export LD_LIBRARY_PATH
 
