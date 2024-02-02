@@ -8,6 +8,16 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ## [Unreleased]()
 
 ### Added
+
+### Fixed
+
+### Changed
+
+### Dependencies
+
+## [0.1.3](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.3) - February 2, 2024
+
+### Added
 - Update qt and openssl path for 242 [#30](https://github.com/ansys/pymechanical-env/pull/30)
 
 ### Fixed
