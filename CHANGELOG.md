@@ -10,13 +10,15 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Added
 
 ### Fixed
-- Fix: Intel path [#42](https://github.com/ansys/pymechanical-env/pull/42)
 
 ### Changed
 
 ### Dependencies
 
 ## [0.1.4](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.4) - March 4, 2024
+
+### Fixed
+- Fix: Intel path [#42](https://github.com/ansys/pymechanical-env/pull/42)
 
 ### Changed
 - Update intelMKL path for 242 [#40](https://github.com/ansys/pymechanical-env/pull/40)
