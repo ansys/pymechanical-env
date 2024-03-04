@@ -10,6 +10,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Added
 
 ### Fixed
+- Fix: Intel path [#42](https://github.com/ansys/pymechanical-env/pull/42)
 
 ### Changed
 - Update intelMKL path for 242 [#40](https://github.com/ansys/pymechanical-env/pull/40)
