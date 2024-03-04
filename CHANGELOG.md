@@ -15,7 +15,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 
 ### Dependencies
 - Update `pre-commit` [#35](https://github.com/ansys/pymechanical-env/pull/35), [#36](https://github.com/ansys/pymechanical-env/pull/36)
-- Bump `pytest` from 8.0.0 to 8.0.1 ([#37](https://github.com/ansys/pymechanical-env/pull/37))
+- Bump `pytest` from 8.0.0 to 8.0.2 ([#37](https://github.com/ansys/pymechanical-env/pull/37), [#38](https://github.com/ansys/pymechanical-env/pull/38))
 
 ## [0.1.3](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.3) - February 2, 2024
 
