@@ -12,6 +12,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Fixed
 
 ### Changed
+- Update intelMKL path for 242 [#40](https://github.com/ansys/pymechanical-env/pull/40)
 
 ### Dependencies
 - Update `pre-commit` [#35](https://github.com/ansys/pymechanical-env/pull/35), [#36](https://github.com/ansys/pymechanical-env/pull/36)
