@@ -142,7 +142,6 @@ LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
 :${DS_INSTALL_DIR}/lib/linx64\
 :${DS_INSTALL_DIR}/dll/linx64\
 :${DS_INSTALL_DIR}/libshared/linx64\
-:${!awp_root}/tp/IntelMKL/2020.0.166/linx64/lib/intel64\
 :${!awp_root}/commonfiles/CAD/Acis/linx64\
 :${!awp_root}/commonfiles/fluids/lib/linx64\
 :${!awp_root}/Framework/bin/Linux64
