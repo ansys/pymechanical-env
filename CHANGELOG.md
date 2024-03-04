@@ -12,6 +12,12 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Fixed
 
 ### Changed
+
+### Dependencies
+
+## [0.1.4](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.4) - March 4, 2024
+
+### Changed
 - Update intelMKL path for 242 [#40](https://github.com/ansys/pymechanical-env/pull/40)
 
 ### Dependencies
