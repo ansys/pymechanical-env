@@ -122,7 +122,7 @@ def test_bash_script(version_number):
         print(version_number)
         assert (
             "/tp/openssl/3.0/linx64/lib"
-            and "/tp/qt/5.15.10/linx64/lib"
+            and "/tp/qt/5.15.16/linx64/lib"
             and "/tp/IntelMKL/2023.1.0/linx64/lib/intel64" in str(stdout)
         )
 

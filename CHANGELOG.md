@@ -12,6 +12,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Fixed
 
 ### Changed
+- Update qt path [#46](https://github.com/ansys/pymechanical-env/pull/46)
 
 ### Dependencies
 - Bump `tj-actions/changed-files` from 42 to 43 ([#44](https://github.com/ansys/pymechanical-env/pull/44))
