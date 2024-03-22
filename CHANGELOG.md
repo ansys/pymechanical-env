@@ -12,6 +12,12 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Fixed
 
 ### Changed
+
+### Dependencies
+
+## [0.1.5](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.5) - March 22, 2024
+
+### Changed
 - Update qt path [#46](https://github.com/ansys/pymechanical-env/pull/46)
 
 ### Dependencies
