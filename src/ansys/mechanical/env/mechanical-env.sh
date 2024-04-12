@@ -24,7 +24,7 @@
 
 # Check if the script is running on a Linux system
 if [ "$(uname)" != "Linux" ]; then
-  echo "This script is intended for Linux environments only."
+  echo "This script is intended for Linux environments only." > /dev/null 2>&1
   exit 1
 fi
 

@@ -1,6 +1,14 @@
 """Project installation script."""
 
+import sys
+
 from setuptools import find_namespace_packages, setup
+
+# Check if the system is Windows
+if sys.platform.startswith("win"):
+    scripts = ["src/ansys/mechanical/env/mechanical-env.bat"]
+else:
+    scripts = ["src/ansys/mechanical/env/mechanical-env.sh"]
 
 setup(
     name="ansys-mechanical-env",
@@ -25,7 +33,7 @@ setup(
     packages=find_namespace_packages(where="src", include="ansys*"),
     package_dir={"": "src"},
     include_package_data=True,
-    scripts=["src/ansys/mechanical/env/mechanical-env"],
+    scripts=scripts,
     entry_points={
         "console_scripts": ["find-mechanical=ansys.mechanical.env.run:cli_find_mechanical"]
     },
