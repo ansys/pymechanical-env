@@ -68,7 +68,7 @@ def test_unsupported_version():
         stderr=subprocess.PIPE,
     )
     _, stderr = process.communicate()
-    assert "Could not find cached Mechanical" in stderr.decode()
+    assert "Could not find requested Mechanical" in stderr.decode()
 
 
 def test_env_variable():
