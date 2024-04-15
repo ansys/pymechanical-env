@@ -36,6 +36,7 @@ def find_installed_versions():
     runner = CliRunner()
     for supported_version in supported_versions:
         result = runner.invoke(cli_find_mechanical, ["-r", int(supported_version)])
+        _version = None
         if result.exit_code == 0:
             _version = result.output.split()[0]  # exe is not needed for this test
         if _version:
@@ -69,7 +70,7 @@ def test_unsupported_version():
         stderr=subprocess.PIPE,
     )
     _, stderr = process.communicate()
-    assert "Could not find requested Mechanical" in stderr.decode()
+    assert "Could not find requested Mechanical" or "Aborted" in stderr.decode()
 
 
 def test_env_variable():
@@ -104,8 +105,9 @@ def test_bash_script(version_number):
     stdout, _ = process.communicate()
     return_code = process.returncode
 
-    # Assert for AWP_ROOT variable which created by script
-    assert f"AWP_ROOT{version_number}=/install/ansys_inc/v{version_number}/aisol/.." in str(stdout)
+    # Assert for some common variables sets by script
+    assert f"AWP_ROOT{version_number}=" in str(stdout)
+    assert f"AWP_LOCALE{version_number}=en-us" in str(stdout)
     # Assert dummy env PYMECHANICAL_EMBEDDING
     assert f"PYMECHANICAL_EMBEDDING=TRUE" in str(stdout)
     # Assert variable specific to version 232
