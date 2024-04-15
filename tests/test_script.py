@@ -23,8 +23,9 @@
 import os
 import subprocess
 
-import ansys.tools.path as atp
 import pytest
+
+from ansys.mechanical.env.run import cli_find_mechanical
 
 
 def find_installed_versions():
@@ -33,10 +34,10 @@ def find_installed_versions():
     versions_found = []
     for supported_version in supported_versions:
         try:
-            exe, version = atp.find_mechanical(version=supported_version)
+            _version, _ = cli_find_mechanical(version=supported_version)
         except:
-            version = None
-        if version:
+            _version = None
+        if _version:
             versions_found.append(supported_version)
     return versions_found
 
@@ -51,7 +52,7 @@ def test_version_argument(version_number):
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
-    stdout, stderr = process.communicate()
+    _, stderr = process.communicate()
 
     # Assert no error after running script
     assert stderr is None or stderr == b""
@@ -66,7 +67,7 @@ def test_unsupported_version():
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
-    stdout, stderr = process.communicate()
+    _, stderr = process.communicate()
     assert "Could not find cached Mechanical" in stderr.decode()
 
 
@@ -81,8 +82,6 @@ def test_env_variable():
         stderr=subprocess.PIPE,
     )
     process.wait()
-    stdout = process.stdout.read().decode()
-    stderr = process.stderr.read().decode()
 
     # Get environment after running mechanical-env
     end_env = os.environ
@@ -101,7 +100,7 @@ def test_bash_script(version_number):
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
-    stdout, stderr = process.communicate()
+    stdout, _ = process.communicate()
     return_code = process.returncode
 
     # Assert for AWP_ROOT variable which created by script
