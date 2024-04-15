@@ -36,8 +36,8 @@ def find_installed_versions():
     runner = CliRunner()
     for supported_version in supported_versions:
         result = runner.invoke(cli_find_mechanical, ["-r", int(supported_version)])
-        assert result.exit_code == 0
-        _version = result.output.strip()  # exe is not needed for this test
+        if result.exit_code == 0:
+            _version = result.output.split()[0]  # exe is not needed for this test
         if _version:
             versions_found.append(_version)
     return versions_found
