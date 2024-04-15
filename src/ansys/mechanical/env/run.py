@@ -22,6 +22,7 @@
 
 """CLI to find Mechanical version and location."""
 import os
+import sys
 
 import ansys.tools.path as atp
 import click
@@ -58,7 +59,10 @@ def cli_find_mechanical(version: int):
     if exe:
         _version = atp.version_from_path("mechanical", exe)
         if _version != version:
-            print(f"Could not find cached Mechanical {version}. Using found {_version} instead.")
+            print(
+                f"Could not find cached Mechanical {version}. Using found {_version} instead.",
+                file=sys.stderr,
+            )
 
     aisol_path = os.path.dirname(exe)
     print(_version, aisol_path)
