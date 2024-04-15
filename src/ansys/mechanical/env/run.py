@@ -54,6 +54,7 @@ def cli_find_mechanical(version: int):
     >>> find-mechanical -r 232
     """
     # Get the version number
+    # TODO if modify line after fixing issue with atp for version
     if not version:
         exe = atp.get_mechanical_path()  # check for saved mechanical path
         if exe:

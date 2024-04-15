@@ -5,6 +5,15 @@ project adheres to [Semantic Versioning](https://semver.org/).
 
 This document follows the conventions laid out in [Keep a CHANGELOG](https://keepachangelog.com/en/1.0.0).
 
+## [0.1.6](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.6) - April 15, 2024
+
+### Added
+- Add embedding env ([#56](https://github.com/ansys/pymechanical-env/pull/56))
+
+### Dependencies
+- Bump `pytest-cov` from 4.1.0 to 5.0.0 ([#48](https://github.com/ansys/pymechanical-env/pull/48))
+- Bump `pytest-mock` from 3.12.0 to 3.14.0 ([#49](https://github.com/ansys/pymechanical-env/pull/49))
+
 ## [0.1.5](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.5) - March 22, 2024
 
 ### Changed
