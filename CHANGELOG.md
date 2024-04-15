@@ -13,6 +13,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Fixed
 
 ### Changed
+- Adapt new ``get_mechanical_path`` ([#57](https://github.com/ansys/pymechanical-env/pull/57))
 
 ### Dependencies
 - Bump `pytest-cov` from 4.1.0 to 5.0.0 ([#48](https://github.com/ansys/pymechanical-env/pull/48))
