@@ -23,6 +23,7 @@
 import os
 import subprocess
 
+from click.testing import CliRunner
 import pytest
 
 from ansys.mechanical.env.run import cli_find_mechanical
@@ -32,13 +33,13 @@ def find_installed_versions():
     """Finds all the installed version of Mechanical."""
     supported_versions = [232, 241, 242]
     versions_found = []
+    runner = CliRunner()
     for supported_version in supported_versions:
-        try:
-            _version, _ = cli_find_mechanical(version=supported_version)
-        except:
-            _version = None
+        result = runner.invoke(cli_find_mechanical, ["-r", int(supported_version)])
+        assert result.exit_code == 0
+        _version = result.output.strip()  # exe is not needed for this test
         if _version:
-            versions_found.append(supported_version)
+            versions_found.append(_version)
     return versions_found
 
 

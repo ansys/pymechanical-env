@@ -55,7 +55,7 @@ def cli_find_mechanical(version: int):
     >>> find-mechanical -r 232
     """
     # checks for saved mechanical path else try to find installation path
-    exe = atp.get_mechanical_path(version)
+    exe = atp.get_mechanical_path(version=version)
     if exe:
         if version is not None:
             _version = atp.version_from_path("mechanical", exe)
