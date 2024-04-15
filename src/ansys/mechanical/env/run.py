@@ -56,9 +56,11 @@ def cli_find_mechanical(version: int):
     # checks for saved mechanical path else try to find installation path
     exe = atp.get_mechanical_path(version)
     if exe:
-        version = atp.version_from_path("mechanical", exe)
+        _version = atp.version_from_path("mechanical", exe)
+        if _version != version:
+            print(f"Could not find cached Mechanical {version}. Using found {_version} instead.")
 
     aisol_path = os.path.dirname(exe)
-    print(version, aisol_path)
+    print(_version, aisol_path)
 
-    return version, aisol_path
+    return _version, aisol_path
