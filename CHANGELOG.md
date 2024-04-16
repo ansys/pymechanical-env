@@ -5,14 +5,18 @@ project adheres to [Semantic Versioning](https://semver.org/).
 
 This document follows the conventions laid out in [Keep a CHANGELOG](https://keepachangelog.com/en/1.0.0).
 
-## [0.1.6](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.6) - April 15, 2024
+## [0.1.6](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.6) - April 16, 2024
 
 ### Added
+- Add dependabot grouping and auto approve ([#53](https://github.com/ansys/pymechanical-env/pull/53))
 - Add embedding env ([#56](https://github.com/ansys/pymechanical-env/pull/56))
+- Adapt new ``get_mechanical_path`` ([#57](https://github.com/ansys/pymechanical-env/pull/57))
 
 ### Dependencies
 - Bump `pytest-cov` from 4.1.0 to 5.0.0 ([#48](https://github.com/ansys/pymechanical-env/pull/48))
 - Bump `pytest-mock` from 3.12.0 to 3.14.0 ([#49](https://github.com/ansys/pymechanical-env/pull/49))
+- Bump `build` from 1.1.1 to 1.2.1 ([#58](https://github.com/ansys/pymechanical-env/pull/58))
+- Bump `tj-actions/changed-files` from 43 to 44 ([#51](https://github.com/ansys/pymechanical-env/pull/51))
 
 ## [0.1.5](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.5) - March 22, 2024
 
@@ -22,7 +26,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Dependencies
 - Bump `tj-actions/changed-files` from 42 to 43 ([#44](https://github.com/ansys/pymechanical-env/pull/44))
 - Bump `pytest` from 8.0.2 to 8.1.1 ([#43](https://github.com/ansys/pymechanical-env/pull/43))
-- Update `pre-commit` [#45](https://github.com/ansys/pymechanical-env/pull/45)
+- Update `pre-commit` ([#45](https://github.com/ansys/pymechanical-env/pull/45), [#52](https://github.com/ansys/pymechanical-env/pull/52))
 
 
 ## [0.1.4](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.4) - March 4, 2024
