@@ -29,7 +29,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Dependencies
 - Bump `tj-actions/changed-files` from 42 to 43 ([#44](https://github.com/ansys/pymechanical-env/pull/44))
 - Bump `pytest` from 8.0.2 to 8.1.1 ([#43](https://github.com/ansys/pymechanical-env/pull/43))
-- Update `pre-commit` [#45](https://github.com/ansys/pymechanical-env/pull/45)
+- Update `pre-commit` ([#45](https://github.com/ansys/pymechanical-env/pull/45), [#52](https://github.com/ansys/pymechanical-env/pull/52)
 
 
 ## [0.1.4](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.4) - March 4, 2024
