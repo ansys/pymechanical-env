@@ -22,7 +22,6 @@
 
 """CLI to find Mechanical version and location."""
 import os
-import sys
 
 import ansys.tools.path as atp
 import click
@@ -55,20 +54,13 @@ def cli_find_mechanical(version: int):
     >>> find-mechanical -r 232
     """
     # checks for saved mechanical path else try to find installation path
-    exe = atp.get_mechanical_path(version=version)
-    if exe:
-        if version is not None:
-            _version = atp.version_from_path("mechanical", exe)
-            if _version != version:
-                print(
-                    f"Could not find requested Mechanical {version}."
-                    f"Using found {_version} instead.",
-                    file=sys.stderr,
-                )
-        else:
-            _version = atp.version_from_path("mechanical", exe)
+    _exe = atp.get_mechanical_path(allow_input=False, version=version)
+    if _exe:
+        _version = atp.version_from_path("mechanical", _exe)
+    else:
+        raise RuntimeError("No Mechanical found")
 
-    aisol_path = os.path.dirname(exe)
-    print(_version, aisol_path)
+    _aisol_path = os.path.dirname(_exe)
+    print(_version, _aisol_path)
 
-    return _version, aisol_path
+    return _version, _aisol_path

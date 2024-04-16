@@ -39,7 +39,7 @@ def find_installed_versions():
         _version = None
         if result.exit_code == 0:
             _version = result.output.split()[0]  # exe is not needed for this test
-        if _version:
+        if _version is not None:
             versions_found.append(_version)
     return versions_found
 
@@ -70,7 +70,7 @@ def test_unsupported_version():
         stderr=subprocess.PIPE,
     )
     _, stderr = process.communicate()
-    assert "Could not find requested Mechanical" or "Aborted" in stderr.decode()
+    assert "No Mechanical found" in stderr.decode()
 
 
 def test_env_variable():
