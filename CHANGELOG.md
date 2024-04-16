@@ -9,6 +9,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 
 ### Added
 - Add dependabot grouping and auto approve ([#53](https://github.com/ansys/pymechanical-env/pull/53))
+- Add embedding env ([#56](https://github.com/ansys/pymechanical-env/pull/56))
 
 ### Fixed
 

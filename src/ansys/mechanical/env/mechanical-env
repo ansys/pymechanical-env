@@ -178,6 +178,11 @@ PATH=${MWHOME}/bin-amd64_linux_optimized\
 :${PATH}
 export PATH
 
+# Adding dummy variable to check if mechanical-env is used
+# when performing embedding with pymechanical in linux
+PYMECHANICAL_EMBEDDING=TRUE
+export PYMECHANICAL_EMBEDDING
+
 # Evaluate the command and get the return code of the process
 eval $@
 returnCode=$?
