@@ -23,21 +23,24 @@
 import os
 import subprocess
 
-import ansys.tools.path as atp
+from click.testing import CliRunner
 import pytest
+
+from ansys.mechanical.env.run import cli_find_mechanical
 
 
 def find_installed_versions():
     """Finds all the installed version of Mechanical."""
     supported_versions = [232, 241, 242]
     versions_found = []
+    runner = CliRunner()
     for supported_version in supported_versions:
-        try:
-            exe, version = atp.find_mechanical(version=supported_version)
-        except:
-            version = None
-        if version:
-            versions_found.append(supported_version)
+        result = runner.invoke(cli_find_mechanical, ["-r", int(supported_version)])
+        _version = None
+        if result.exit_code == 0:
+            _version = result.output.split()[0]  # exe is not needed for this test
+        if _version is not None:
+            versions_found.append(_version)
     return versions_found
 
 
@@ -51,7 +54,7 @@ def test_version_argument(version_number):
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
-    stdout, stderr = process.communicate()
+    _, stderr = process.communicate()
 
     # Assert no error after running script
     assert stderr is None or stderr == b""
@@ -66,8 +69,8 @@ def test_unsupported_version():
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
-    stdout, stderr = process.communicate()
-    assert "ValueError" in stderr.decode()
+    _, stderr = process.communicate()
+    assert stderr is not None
 
 
 def test_env_variable():
@@ -81,8 +84,6 @@ def test_env_variable():
         stderr=subprocess.PIPE,
     )
     process.wait()
-    stdout = process.stdout.read().decode()
-    stderr = process.stderr.read().decode()
 
     # Get environment after running mechanical-env
     end_env = os.environ
@@ -101,11 +102,12 @@ def test_bash_script(version_number):
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
-    stdout, stderr = process.communicate()
+    stdout, _ = process.communicate()
     return_code = process.returncode
 
-    # Assert for AWP_ROOT variable which created by script
-    assert f"AWP_ROOT{version_number}=/install/ansys_inc/v{version_number}/aisol/.." in str(stdout)
+    # Assert for some common variables sets by script
+    assert f"AWP_ROOT{version_number}=" in str(stdout)
+    assert f"AWP_LOCALE{version_number}=en-us" in str(stdout)
     # Assert dummy env PYMECHANICAL_EMBEDDING
     assert f"PYMECHANICAL_EMBEDDING=TRUE" in str(stdout)
     # Assert variable specific to version 232

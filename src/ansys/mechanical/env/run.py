@@ -53,20 +53,11 @@ def cli_find_mechanical(version: int):
 
     >>> find-mechanical -r 232
     """
-    # Get the version number
-    # TODO if modify line after fixing issue with atp for version
-    if not version:
-        exe = atp.get_mechanical_path()  # check for saved mechanical path
-        if exe:
-            version = atp.version_from_path("mechanical", exe)  # version is already int here
-        else:
-            exe, _version = atp.find_mechanical()
-            version = int(_version * 10)
-    else:
-        exe, _version = atp.find_mechanical(version=version)
-        version = int(_version * 10)
+    # checks for saved mechanical path else try to find installation path
+    _exe = atp.get_mechanical_path(allow_input=False, version=version)
+    _version = atp.version_from_path("mechanical", _exe)
 
-    aisol_path = os.path.dirname(exe)
-    print(version, aisol_path)
+    _aisol_path = os.path.dirname(_exe)
+    print(_version, _aisol_path)
 
-    return version, aisol_path
+    return _version, _aisol_path
