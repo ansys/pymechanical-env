@@ -8,6 +8,8 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ## [Unreleased]()
 
 ### Added
+- Add dependabot grouping and auto approve ([#53](https://github.com/ansys/pymechanical-env/pull/53))
+- Add embedding env ([#56](https://github.com/ansys/pymechanical-env/pull/56))
 
 ### Fixed
 
@@ -16,7 +18,8 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Dependencies
 - Bump `pytest-cov` from 4.1.0 to 5.0.0 ([#48](https://github.com/ansys/pymechanical-env/pull/48))
 - Bump `pytest-mock` from 3.12.0 to 3.14.0 ([#49](https://github.com/ansys/pymechanical-env/pull/49))
-- Bump `build` from 1.1.1 to 1.2.1 ([#50](https://github.com/ansys/pymechanical-env/pull/50))
+- Bump `build` from 1.1.1 to 1.2.1 ([#58](https://github.com/ansys/pymechanical-env/pull/58))
+- Bump `tj-actions/changed-files` from 43 to 44 ([#51](https://github.com/ansys/pymechanical-env/pull/51))
 
 ## [0.1.5](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.5) - March 22, 2024
 

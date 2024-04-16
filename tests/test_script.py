@@ -106,7 +106,8 @@ def test_bash_script(version_number):
 
     # Assert for AWP_ROOT variable which created by script
     assert f"AWP_ROOT{version_number}=/install/ansys_inc/v{version_number}/aisol/.." in str(stdout)
-
+    # Assert dummy env PYMECHANICAL_EMBEDDING
+    assert f"PYMECHANICAL_EMBEDDING=TRUE" in str(stdout)
     # Assert variable specific to version 232
     if version_number == 232:
         print(version_number)
