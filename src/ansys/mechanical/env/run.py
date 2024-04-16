@@ -55,10 +55,7 @@ def cli_find_mechanical(version: int):
     """
     # checks for saved mechanical path else try to find installation path
     _exe = atp.get_mechanical_path(allow_input=False, version=version)
-    if _exe:
-        _version = atp.version_from_path("mechanical", _exe)
-    else:
-        raise Exception("No Mechanical found")
+    _version = atp.version_from_path("mechanical", _exe)
 
     _aisol_path = os.path.dirname(_exe)
     print(_version, _aisol_path)
