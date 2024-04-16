@@ -58,7 +58,7 @@ def cli_find_mechanical(version: int):
     if _exe:
         _version = atp.version_from_path("mechanical", _exe)
     else:
-        raise RuntimeError("No Mechanical found")
+        raise Exception("No Mechanical found")
 
     _aisol_path = os.path.dirname(_exe)
     print(_version, _aisol_path)
