@@ -22,6 +22,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 - Bump `build` from 1.1.1 to 1.2.1 ([#58](https://github.com/ansys/pymechanical-env/pull/58))
 - Bump `tj-actions/changed-files` from 43 to 44 ([#51](https://github.com/ansys/pymechanical-env/pull/51))
 - Bump `ansys/actions` from 5 to 6 ([#59](https://github.com/ansys/pymechanical-env/pull/59))
+- Bump `pytest` from 8.1.1 to 8.2.0 ([#60](https://github.com/ansys/pymechanical-env/pull/60))
 
 ## [0.1.5](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.5) - March 22, 2024
 
