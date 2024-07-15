@@ -31,7 +31,7 @@ from ansys.mechanical.env.run import cli_find_mechanical
 
 def find_installed_versions():
     """Finds all the installed version of Mechanical."""
-    supported_versions = [232, 241, 242]
+    supported_versions = [232, 241, 242, 251]
     versions_found = []
     runner = CliRunner()
     for supported_version in supported_versions:
