@@ -12,6 +12,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Fixed
 
 ### Changed
+ - MAINT: Update Python version([#67](https://github.com/ansys/pymechanical-env/pull/67))
 
 ### Dependencies
 - Bump `ansys/actions` from 5 to 6 ([#59](https://github.com/ansys/pymechanical-env/pull/59))
