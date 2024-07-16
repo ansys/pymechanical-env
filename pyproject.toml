@@ -16,3 +16,66 @@ source = ["ansys-mechanical-env"]
 
 [tool.coverage.report]
 show_missing = true
+
+
+# ========================================================
+# Flake8 Configuration
+# ========================================================
+
+[tool.flake8]
+exclude = ["venv", "__init__.py", "doc/_build", ".venv"]
+select = [
+    "W191", "W291", "W293", "W391", "E115", "E117",
+    "E122", "E124", "E125", "E225", "E231", "E301",
+    "E303", "E501", "F401", "F403"
+]
+count = true
+max-complexity = 10
+max-line-length = 100
+statistics = true
+
+# ========================================================
+# Tox Configuration
+# ========================================================
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+description = Default tox environments list
+envlist =
+    style,{py39,py310,py311,py312}{,-coverage},doc
+skip_missing_interpreters = true
+
+[testenv]
+description = Checks for project unit tests and coverage (if desired)
+basepython =
+    py39: python3.9
+    py310: python3.10
+    py311: python3.11
+    py312: python3.12
+    py: python3
+    {style,reformat,doc,build}: python3
+deps =
+    -r{toxinidir}/requirements/requirements_tests.txt
+setenv =
+    PYTHONUNBUFFERED = yes
+    coverage: PYTEST_EXTRA_ARGS = --cov=ansys.mechanical.env --cov-report=term --cov-report=xml:.cov/xml --cov-report=html:.cov/html
+commands =
+    pytest {env:PYTEST_MARKERS:} {env:PYTEST_EXTRA_ARGS:} {posargs:-vv}
+
+[testenv:style]
+description = Checks project code style
+skip_install = true
+deps =
+    pre-commit
+commands =
+    pre-commit install
+    pre-commit run --all-files --show-diff-on-failure
+
+[testenv:doc]
+description = Check if documentation generates properly
+deps =
+    -r{toxinidir}/requirements/requirements_doc.txt
+commands =
+    sphinx-build -d "{toxworkdir}/doc_doctree" doc/source "{toxinidir}/_build/html" --color -vW -bhtml
+"""
