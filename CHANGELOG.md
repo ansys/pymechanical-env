@@ -12,6 +12,13 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Fixed
 
 ### Changed
+
+### Dependencies
+
+
+## [0.1.7](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.7) - July 16, 2024
+
+### Changed
  - MAINT: Update Python version([#67](https://github.com/ansys/pymechanical-env/pull/67))
 
 ### Dependencies
