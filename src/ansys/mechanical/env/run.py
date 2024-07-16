@@ -34,7 +34,7 @@ import click
     "--version",
     default=None,
     type=int,
-    help='Ansys version number, such as "241" or "232".\
+    help='Ansys version number, such as "242" or "241".\
          If a version number is not specified, it uses the default from \
             ansys-tools-path.',
 )
@@ -51,7 +51,7 @@ def cli_find_mechanical(version: int):
     -------
     Get the version and location of the installation directory.
 
-    >>> find-mechanical -r 232
+    >>> find-mechanical -r 242
     """
     # checks for saved mechanical path else try to find installation path
     _exe = atp.get_mechanical_path(allow_input=False, version=version)

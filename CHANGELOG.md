@@ -5,11 +5,27 @@ project adheres to [Semantic Versioning](https://semver.org/).
 
 This document follows the conventions laid out in [Keep a CHANGELOG](https://keepachangelog.com/en/1.0.0).
 
+
+## [0.1.7](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.7) - July 16, 2024
+
+### Changed
+ - MAINT: Update Python version([#67](https://github.com/ansys/pymechanical-env/pull/67))
+
+### Dependencies
+- Bump `ansys/actions` from 5 to 6 ([#59](https://github.com/ansys/pymechanical-env/pull/59))
+- Bump `pytest` from 8.1.1 to 8.2.2 ([#60](https://github.com/ansys/pymechanical-env/pull/60), [#64](https://github.com/ansys/pymechanical-env/pull/64), [#65](https://github.com/ansys/pymechanical-env/pull/65))
+- Update `pre-commit` ([#61](https://github.com/ansys/pymechanical-env/pull/61), [#63](https://github.com/ansys/pymechanical-env/pull/63), [#66](https://github.com/ansys/pymechanical-env/pull/66))
+
+
 ## [0.1.6](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.6) - April 16, 2024
 
 ### Added
 - Add dependabot grouping and auto approve ([#53](https://github.com/ansys/pymechanical-env/pull/53))
 - Add embedding env ([#56](https://github.com/ansys/pymechanical-env/pull/56))
+
+### Fixed
+
+### Changed
 - Adapt new ``get_mechanical_path`` ([#57](https://github.com/ansys/pymechanical-env/pull/57))
 
 ### Dependencies
