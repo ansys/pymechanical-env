@@ -14,6 +14,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Changed
 
 ### Dependencies
+- Bump `pytest` from 8.2.2 to 8.3.1 ([#71](https://github.com/ansys/pymechanical-env/pull/71))
 
 
 ## [0.1.7](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.7) - July 16, 2024
