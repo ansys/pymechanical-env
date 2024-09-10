@@ -18,6 +18,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 - Update `pre-commit` ([#72](https://github.com/ansys/pymechanical-env/pull/72), [#74](https://github.com/ansys/pymechanical-env/pull/74), [#77](https://github.com/ansys/pymechanical-env/pull/77))
 - Bump `ansys/actions` from 6 to 7 ([#75](https://github.com/ansys/pymechanical-env/pull/75))
 - Bump `tj-actions/changed-files` from 44 to 45 ([#76](https://github.com/ansys/pymechanical-env/pull/76))
+- Bump `build` from 1.2.1 to 1.2.2 ([#79](https://github.com/ansys/pymechanical-env/pull/79))
 
 
 ## [0.1.7](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.7) - July 16, 2024
