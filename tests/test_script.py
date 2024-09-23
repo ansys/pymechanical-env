@@ -129,5 +129,10 @@ def test_bash_script(version_number):
             and "/tp/IntelMKL/2023.1.0/linx64/lib/intel64" in str(stdout)
         )
 
+    # Assert variable specific to version 251
+    if version_number == 251:
+        print(version_number)
+        assert "/tp/qt/5.15.17/linx64/lib" in str(stdout)
+
     # Assert if the script returned successfully
     assert return_code == 0
