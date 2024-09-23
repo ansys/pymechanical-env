@@ -153,7 +153,7 @@ if [ "$version" = "251" ]; then # For version 242
 :${!awp_root}/tp/nss/3.89/lib\
 :${!awp_root}/tp/IntelCompiler/2023.1.0/linx64/lib/intel64\
 :${!awp_root}/tp/qt/5.15.17/linx64/lib\
-:${!awp_root}/tp/openssl/3.0/linx64/libs
+:${!awp_root}/tp/openssl/3.0/linx64/lib
 elif [ "$version" = "242" ]; then # For version 242
     LD_LIBRARY_PATH=${LD_LIBRARY_PATH}\
 :${!awp_root}/tp/IntelMKL/2023.1.0/linx64/lib/intel64\
