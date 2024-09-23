@@ -12,6 +12,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Fixed
 
 ### Changed
+- MAINT: Drop python 3.9 ([#82](https://github.com/ansys/pymechanical-env/pull/82))
 
 ### Dependencies
 - Bump `pytest` from 8.2.2 to 8.3.3 ([#71](https://github.com/ansys/pymechanical-env/pull/71), [#73](https://github.com/ansys/pymechanical-env/pull/73), [#80](https://github.com/ansys/pymechanical-env/pull/80))
