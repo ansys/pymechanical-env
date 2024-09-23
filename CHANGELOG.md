@@ -8,9 +8,18 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ## [Unreleased]()
 
 ### Added
-- Update qt version ([#81](https://github.com/ansys/pymechanical-env/pull/81))
 
 ### Fixed
+
+### Changed
+
+### Dependencies
+
+
+## [0.1.8](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.8) - September 23, 2024
+
+### Added
+- Update qt version ([#81](https://github.com/ansys/pymechanical-env/pull/81))
 
 ### Changed
 - MAINT: Drop python 3.9 ([#82](https://github.com/ansys/pymechanical-env/pull/82))
