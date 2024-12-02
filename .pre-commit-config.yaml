@@ -38,12 +38,12 @@ repos:
   - id: trailing-whitespace
 
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.29.4
+  rev: 0.30.0
   hooks:
     - id: check-github-workflows
 
 - repo: https://github.com/ansys/pre-commit-hooks
-  rev: v0.4.3
+  rev: v0.4.4
   hooks:
   - id: add-license-headers
     files: '(src|examples|tests)/(?:.*/)*[^./]*(\.py)?$'
