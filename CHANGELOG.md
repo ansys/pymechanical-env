@@ -18,6 +18,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 - Update `pre-commit` [#84](https://github.com/ansys/pymechanical-env/pull/84)
 - Bump `ansys/actions` from 7 to 8 ([#85](https://github.com/ansys/pymechanical-env/pull/85))
 - Bump `pytest-cov` from 5.0.0 to 6.0.0 ([#87](https://github.com/ansys/pymechanical-env/pull/87))
+- Bump `pytest` from 8.3.3 to 8.3.4 ([#89](https://github.com/ansys/pymechanical-env/pull/89))
 
 ## [0.1.8](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.8) - September 23, 2024
 
