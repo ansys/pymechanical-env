@@ -15,7 +15,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 
 ### Dependencies
 - Bump `build` from 1.2.2 to 1.2.2.post1 ([#86](https://github.com/ansys/pymechanical-env/pull/86))
-- Update `pre-commit` [#84](https://github.com/ansys/pymechanical-env/pull/84)
+- Update `pre-commit` ([#84](https://github.com/ansys/pymechanical-env/pull/84), [#88](https://github.com/ansys/pymechanical-env/pull/88))
 - Bump `ansys/actions` from 7 to 8 ([#85](https://github.com/ansys/pymechanical-env/pull/85))
 - Bump `pytest-cov` from 5.0.0 to 6.0.0 ([#87](https://github.com/ansys/pymechanical-env/pull/87))
 - Bump `pytest` from 8.3.3 to 8.3.4 ([#89](https://github.com/ansys/pymechanical-env/pull/89))
