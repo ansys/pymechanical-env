@@ -8,11 +8,15 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ## [Unreleased]()
 
 ### Added
-- Update main Product version to 251 and support 252 ([#91](https://github.com/ansys/pymechanical-env/pull/91))
-
 ### Fixed
-
 ### Changed
+### Dependencies
+
+
+## [0.1.9](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.9) - January 15, 2025
+
+### Added
+- Update main Product version to 251 and support 252 ([#91](https://github.com/ansys/pymechanical-env/pull/91))
 
 ### Dependencies
 - Bump `build` from 1.2.2 to 1.2.2.post1 ([#86](https://github.com/ansys/pymechanical-env/pull/86))
