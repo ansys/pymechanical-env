@@ -6,12 +6,10 @@ project adheres to [Semantic Versioning](https://semver.org/).
 This document follows the conventions laid out in [Keep a CHANGELOG](https://keepachangelog.com/en/1.0.0).
 
 
-## [0.1.8](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.8) - September 23, 2024
+## [0.1.9](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.9) - January 01, 2025
 
 ### Added
 - Update main Product version to 251 and support 252 ([#91](https://github.com/ansys/pymechanical-env/pull/91))
-
-### Changed
 
 ### Dependencies
 - Bump `build` from 1.2.2 to 1.2.2.post1 ([#86](https://github.com/ansys/pymechanical-env/pull/86))

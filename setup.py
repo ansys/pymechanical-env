@@ -4,7 +4,7 @@ from setuptools import find_namespace_packages, setup
 
 setup(
     name="ansys-mechanical-env",
-    version="0.1.8",
+    version="0.1.9",
     url="https://github.com/ansys/pymechanical-env",
     author="ANSYS, Inc.",
     author_email="pyansys.core@ansys.com",
