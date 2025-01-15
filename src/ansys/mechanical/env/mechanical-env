@@ -147,7 +147,8 @@ LD_LIBRARY_PATH=${!awp_root}/tp/stdc++\
 :${!awp_root}/Framework/bin/Linux64
 
 # Add extra path to the dynamic library load path depending on version
-if [ "$version" = "251" ] || [ "$version" = "252" ]; then # For version 251 or 252
+# For version 251, 252 or greater
+if [ "$version" = "251" ] || [ "$version" = "252" ] || [ "$version" -gt "252" ]; then
     LD_LIBRARY_PATH=${LD_LIBRARY_PATH}\
 :${!awp_root}/tp/IntelMKL/2023.1.0/linx64/lib/intel64\
 :${!awp_root}/tp/nss/3.89/lib\
