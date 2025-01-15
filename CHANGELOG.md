@@ -8,6 +8,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ## [Unreleased]()
 
 ### Added
+- Update main Product version to 251 and support 252 ([#91](https://github.com/ansys/pymechanical-env/pull/91))
 
 ### Fixed
 
