@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -51,7 +51,7 @@ def cli_find_mechanical(version: int):
     -------
     Get the version and location of the installation directory.
 
-    >>> find-mechanical -r 242
+    >>> find-mechanical -r 251
     """
     # checks for saved mechanical path else try to find installation path
     _exe = atp.get_mechanical_path(allow_input=False, version=version)

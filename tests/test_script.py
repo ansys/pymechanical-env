@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@ from ansys.mechanical.env.run import cli_find_mechanical
 
 def find_installed_versions():
     """Finds all the installed version of Mechanical."""
-    supported_versions = [232, 241, 242, 251]
+    supported_versions = [232, 241, 242, 251, 252]
     versions_found = []
     runner = CliRunner()
     for supported_version in supported_versions:
@@ -110,19 +110,17 @@ def test_bash_script(version_number):
     assert f"AWP_LOCALE{version_number}=en-us" in str(stdout)
     # Assert dummy env PYMECHANICAL_EMBEDDING
     assert f"PYMECHANICAL_EMBEDDING=TRUE" in str(stdout)
+
     # Assert variable specific to version 232
     if version_number == 232:
-        print(version_number)
         assert "/tp/IntelCompiler/2019.3.199/linx64/lib/intel64" in str(stdout)
 
     # Assert variable specific to version 241
     if version_number == 241:
-        print(version_number)
         assert "/tp/nss/3.89/lib" and "/tp/IntelCompiler/2023.1.0/linx64/lib/intel64" in str(stdout)
 
     # Assert variable specific to version 242
     if version_number == 242:
-        print(version_number)
         assert (
             "/tp/openssl/3.0/linx64/lib"
             and "/tp/qt/5.15.16/linx64/lib"
@@ -130,8 +128,7 @@ def test_bash_script(version_number):
         )
 
     # Assert variable specific to version 251
-    if version_number == 251:
-        print(version_number)
+    if version_number == 251 or version_number == 252:
         assert "/tp/qt/5.15.17/linx64/lib" in str(stdout)
 
     # Assert if the script returned successfully
