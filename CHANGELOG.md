@@ -11,7 +11,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Fixed
 ### Changed
 ### Dependencies
-- Update `pre-commit` [#90](https://github.com/ansys/pymechanical-env/pull/90)
+- Update `pre-commit` ([#90](https://github.com/ansys/pymechanical-env/pull/90), [#93](https://github.com/ansys/pymechanical-env/pull/93))
 
 
 ## [0.1.9](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.9) - January 15, 2025
