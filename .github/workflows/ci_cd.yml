@@ -65,7 +65,7 @@ jobs:
         with:
           token: ${{ secrets.CHANGELOG_TOKEN }}
 
-      - uses: dangoslen/dependabot-changelog-helper@v3
+      - uses: dangoslen/dependabot-changelog-helper@v4
         if: ${{ github.actor == 'dependabot[bot]' }}
         with:
           activationLabel: 'dependabot'
