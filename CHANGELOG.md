@@ -13,6 +13,7 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Dependencies
 - Update `pre-commit` ([#90](https://github.com/ansys/pymechanical-env/pull/90), [#93](https://github.com/ansys/pymechanical-env/pull/93))
 - Bump `pytest` from 8.3.4 to 8.3.5 ([#96](https://github.com/ansys/pymechanical-env/pull/96))
+- Bump `dangoslen/dependabot-changelog-helper` from 3 to 4 ([#95](https://github.com/ansys/pymechanical-env/pull/95))
 
 
 ## [0.1.9](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.9) - January 15, 2025
