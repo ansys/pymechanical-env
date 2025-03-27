@@ -5,8 +5,11 @@ project adheres to [Semantic Versioning](https://semver.org/).
 
 This document follows the conventions laid out in [Keep a CHANGELOG](https://keepachangelog.com/en/1.0.0).
 
+This project uses [towncrier](https://towncrier.readthedocs.io/) and the changes for the upcoming release can be found in <https://github.com/ansys/pymechanical-env/tree/main/doc/changelog.d/>.
 
-## [0.1.9](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.9) - January 01, 2025
+<!-- towncrier release notes start -->
+
+## [0.1.9](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.9) - January 15, 2025
 
 ### Added
 - Update main Product version to 251 and support 252 ([#91](https://github.com/ansys/pymechanical-env/pull/91))
@@ -51,8 +54,6 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 - Add dependabot grouping and auto approve ([#53](https://github.com/ansys/pymechanical-env/pull/53))
 - Add embedding env ([#56](https://github.com/ansys/pymechanical-env/pull/56))
 
-### Fixed
-
 ### Changed
 - Adapt new ``get_mechanical_path`` ([#57](https://github.com/ansys/pymechanical-env/pull/57))
 
@@ -91,6 +92,10 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 ### Added
 - Update qt and openssl path for 242 [#30](https://github.com/ansys/pymechanical-env/pull/30)
 
+### Fixed
+
+### Changed
+
 ### Dependencies
 - Update `pre-commit` [#27](https://github.com/ansys/pymechanical-env/pull/27), [#33](https://github.com/ansys/pymechanical-env/pull/33)
 - Bump `tj-actions/changed-files` from 41 to 42 ([#28](https://github.com/ansys/pymechanical-env/pull/28))
@@ -125,7 +130,3 @@ This document follows the conventions laid out in [Keep a CHANGELOG](https://kee
 
 ### Fixed
 - Improve the ci/cd tests with the help of matrix style [#8](https://github.com/ansys-internal/pymechanical-env/pull/8)
-
-### Changed
-
-### Dependencies
