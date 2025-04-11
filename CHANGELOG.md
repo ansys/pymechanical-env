@@ -9,6 +9,19 @@ This project uses [towncrier](https://towncrier.readthedocs.io/) and the changes
 
 <!-- towncrier release notes start -->
 
+## [0.1.11](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.11) - April 11, 2025
+
+
+### Maintenance
+
+- chore: update CHANGELOG for v0.1.10 [#101](https://github.com/ansys/pymechanical-env/pull/101)
+
+
+### Miscellaneous
+
+- [pre-commit.ci] pre-commit autoupdate [#94](https://github.com/ansys/pymechanical-env/pull/94)
+- CHORE: Update qt version [#103](https://github.com/ansys/pymechanical-env/pull/103)
+
 ## [0.1.10](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.10) - March 27, 2025
 
 
