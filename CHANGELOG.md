@@ -9,6 +9,37 @@ This project uses [towncrier](https://towncrier.readthedocs.io/) and the changes
 
 <!-- towncrier release notes start -->
 
+## [0.1.11](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.11) - April 11, 2025
+
+
+### Maintenance
+
+- chore: update CHANGELOG for v0.1.10 [#101](https://github.com/ansys/pymechanical-env/pull/101)
+
+
+### Miscellaneous
+
+- [pre-commit.ci] pre-commit autoupdate [#94](https://github.com/ansys/pymechanical-env/pull/94)
+- CHORE: Update qt version [#103](https://github.com/ansys/pymechanical-env/pull/103)
+
+## [0.1.10](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.10) - March 27, 2025
+
+
+### Added
+
+- CHORE: Update IntelMKL version [#100](https://github.com/ansys/pymechanical-env/pull/100)
+
+
+### Dependencies
+
+- Update `pre-commit` [#90](https://github.com/ansys/pymechanical-env/pull/90), [#93](https://github.com/ansys/pymechanical-env/pull/93)
+- Bump `pytest` from 8.3.4 to 8.3.5 and `dangoslen/dependabot-changelog-helper` from 3 to 4 [#95](https://github.com/ansys/pymechanical-env/pull/95)
+
+
+### Fixed
+
+- fix: remove vulnerable action [#98](https://github.com/ansys/pymechanical-env/pull/98)
+
 ## [0.1.9](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.9) - January 15, 2025
 
 ### Added
