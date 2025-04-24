@@ -69,7 +69,7 @@ else
 fi
 
 # Run the find-mechanical command and capture its output
-output=$($find_mechanical_command)
+output="$($find_mechanical_command)"
 
 # Check if there was an error
 if [ $? -ne 0 ]; then
