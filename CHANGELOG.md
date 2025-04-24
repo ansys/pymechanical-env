@@ -9,24 +9,6 @@ This project uses [towncrier](https://towncrier.readthedocs.io/) and the changes
 
 <!-- towncrier release notes start -->
 
-## [0.1.12](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.12) - April 24, 2025
-
-
-### Dependencies
-
-- MAINT: Bump pytest-cov from 6.0.0 to 6.1.1 in the actions group [#102](https://github.com/ansys/pymechanical-env/pull/102)
-- MAINT: Bump ansys/actions from 8 to 9 [#105](https://github.com/ansys/pymechanical-env/pull/105)
-
-
-### Maintenance
-
-- chore: update CHANGELOG for v0.1.11 [#104](https://github.com/ansys/pymechanical-env/pull/104)
-
-
-### Miscellaneous
-
-- [pre-commit.ci] pre-commit autoupdate [#106](https://github.com/ansys/pymechanical-env/pull/106)
-
 ## [0.1.11](https://github.com/ansys/pymechanical-env/releases/tag/v0.1.11) - April 11, 2025
 
 
