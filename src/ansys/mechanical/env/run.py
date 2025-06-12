@@ -38,7 +38,15 @@ import click
          If a version number is not specified, it uses the default from \
             ansys-tools-path.',
 )
-def cli_find_mechanical(version: int):
+@click.option(
+    "-p",
+    "--path",
+    default=None,
+    type=click.Path(exists=True, file_okay=False),
+    help="Optional path to the Ansys installation directory. "
+    "If provided, this path will be used instead of the default.",
+)
+def cli_find_mechanical(version: int, path: str | None = None) -> tuple[int, str]:
     """
     Use the CLI tool to find the Mechanical version and location.
 
@@ -46,14 +54,44 @@ def cli_find_mechanical(version: int):
     ----------
     version: int
         Ansys version number.
+    path: str, optional
+        Optional path to the Ansys installation directory. If provided,
+        this path will be used instead of the default.
+        eg: "C:/Program Files/ANSYS Inc/v251/"
 
     Example
     -------
     Get the version and location of the installation directory.
 
     >>> find-mechanical -r 251
+    >>> find-mechanical -p "usr/ansys_inc/v251/"
     """
-    # checks for saved mechanical path else try to find installation path
+    if path and version:
+        if version != atp.version_from_path("mechanical", path):
+            raise click.BadParameter(
+                f"The provided path {path} does not match the specified version {version}."
+            )
+    if path and not version:
+        _version_from_given_path = atp.version_from_path("mechanical", path)
+        print(_version_from_given_path, path)
+        return _version_from_given_path, path
+
+    awp_roots = [value for key, value in os.environ.items() if key.startswith("AWP_ROOT")]
+
+    if awp_roots:
+        versions_found = []
+        for path in awp_roots:
+            folder = os.path.basename(os.path.normpath(path))
+            _version = folder.split("v")[-1]
+            versions_found.append(int(_version))
+        if version in versions_found:
+            print(version, os.environ[f"AWP_ROOT{version}"])
+            return version, os.environ[f"AWP_ROOT{version}"]
+        if versions_found:
+            latest_version = max(versions_found)
+            print(latest_version, os.environ[f"AWP_ROOT{latest_version}"])
+            return latest_version, os.environ[f"AWP_ROOT{latest_version}"]
+
     _exe = atp.get_mechanical_path(allow_input=False, version=version)
     _version = atp.version_from_path("mechanical", _exe)
 
