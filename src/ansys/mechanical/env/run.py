@@ -55,8 +55,7 @@ def cli_find_mechanical(version: int, path: str | None = None) -> tuple[int, str
     version: int
         Ansys version number.
     path: str, optional
-        Optional path to the Ansys installation directory. If provided,
-        this path will be used instead of the default.
+        Optional path to the Ansys installation directory.
         eg: "C:/Program Files/ANSYS Inc/v251/"
 
     Example
@@ -66,11 +65,20 @@ def cli_find_mechanical(version: int, path: str | None = None) -> tuple[int, str
     >>> find-mechanical -r 251
     >>> find-mechanical -p "usr/ansys_inc/v251/"
     """
+    # Priority of finding the Mechanical version and path:
+    # 1. If both path and version are provided, check if they match and use them
+    # 2. If only path is provided, determine the version from the path
+    # 3. If neither is provided, check environment variables for AWP_ROOT
+    # 3. If multiple AWP_ROOT variables are found, use the highest version
+    # 4. If no AWP_ROOT variables are found, use the default from ansys-tools-path
+    # 5. If the default path is not found, check saved ansys path from config file
     if path and version:
         if version != atp.version_from_path("mechanical", path):
             raise click.BadParameter(
                 f"The provided path {path} does not match the specified version {version}."
             )
+        print(version, path)
+        return version, path
     if path and not version:
         _version_from_given_path = atp.version_from_path("mechanical", path)
         print(_version_from_given_path, path)
@@ -92,6 +100,7 @@ def cli_find_mechanical(version: int, path: str | None = None) -> tuple[int, str
             print(latest_version, os.environ[f"AWP_ROOT{latest_version}"])
             return latest_version, os.environ[f"AWP_ROOT{latest_version}"]
 
+    # Use ansys-tools-path
     _exe = atp.get_mechanical_path(allow_input=False, version=version)
     _version = atp.version_from_path("mechanical", _exe)
 
