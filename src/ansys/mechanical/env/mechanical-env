@@ -31,14 +31,16 @@ fi
 # Check if at least one argument was provided
 if [ $# -lt 1 ]; then
     echo "Usage:"
-    echo "    mechanical-env [-r version] [COMMAND]"
+    echo "    mechanical-env [-r version] [-p <path to installation>] [COMMAND]"
     echo "Example:"
     echo "    mechanical-env -r 251 python"
+    echo "    mechanical-env -p /usr/install/ansys_inc/251 python"
     exit 1
 fi
 
 # Initialize variables
 version=""
+path=""
 command=""
 
 # Process command line arguments
@@ -46,6 +48,10 @@ while [ "$#" -gt 0 ]; do
     case "$1" in
         -r|--version)
             version="$2"
+            shift 2
+            ;;
+        -p|--path)
+            path="$2"
             shift 2
             ;;
         *)
@@ -57,19 +63,24 @@ done
 
 # Check if a command was provided
 if [ -z "$command" ]; then
-    echo "Usage: mechanical-env [-r version] [COMMAND]"
+    echo "Usage: mechanical-env [-r version] [-p <path to installation>] [COMMAND]"
     exit 1
 fi
 
+
 # Determine the appropriate command to run the find-mechanical command
-if [ -n "$version" ]; then
+if [ -n "$version" ] && [ -n "$path" ]; then
+    find_mechanical_command="find-mechanical -r $version -p $path"
+elif [ -n "$version" ]; then
     find_mechanical_command="find-mechanical -r $version"
+elif [ -n "$path" ]; then
+    find_mechanical_command="find-mechanical -p $path"
 else
     find_mechanical_command="find-mechanical"
 fi
 
 # Run the find-mechanical command and capture its output
-output=$($find_mechanical_command)
+output="$($find_mechanical_command)"
 
 # Check if there was an error
 if [ $? -ne 0 ]; then
