@@ -56,7 +56,7 @@ def cli_find_mechanical(version: int, path: str | None = None) -> tuple[int, str
         Ansys version number.
     path: str, optional
         Optional path to the Ansys installation directory.
-        eg: "C:/Program Files/ANSYS Inc/v251/"
+        eg: "usr/ansys_inc/v251/"
 
     Example
     -------
