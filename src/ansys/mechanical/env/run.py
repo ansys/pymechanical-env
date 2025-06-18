@@ -77,12 +77,12 @@ def cli_find_mechanical(version: int, path: str | None = None) -> tuple[int, str
             raise click.BadParameter(
                 f"The provided path {path} does not match the specified version {version}."
             )
-        print(version, path)
-        return version, path
+        print(version, os.path.join(path, "aisol"))
+        return version, os.path.join(path, "aisol")
     if path and not version:
         _version_from_given_path = atp.version_from_path("mechanical", path)
-        print(_version_from_given_path, path)
-        return _version_from_given_path, path
+        print(_version_from_given_path, os.path.join(path, "aisol"))
+        return _version_from_given_path, os.path.join(path, "aisol")
 
     awp_roots = [value for key, value in os.environ.items() if key.startswith("AWP_ROOT")]
 
@@ -93,18 +93,18 @@ def cli_find_mechanical(version: int, path: str | None = None) -> tuple[int, str
             _version = folder.split("v")[-1]
             versions_found.append(int(_version))
         if version in versions_found:
-            print(version, os.environ[f"AWP_ROOT{version}"])
-            return version, os.environ[f"AWP_ROOT{version}"]
+            print(version, os.path.join(os.environ[f"AWP_ROOT{version}"], "aisol"))
+            return version, os.path.join(os.environ[f"AWP_ROOT{version}"], "aisol")
         if versions_found:
             latest_version = max(versions_found)
-            print(latest_version, os.environ[f"AWP_ROOT{latest_version}"])
-            return latest_version, os.environ[f"AWP_ROOT{latest_version}"]
+            print(latest_version, os.path.join(os.environ[f"AWP_ROOT{latest_version}"], "aisol"))
+            return latest_version, os.path.join(os.environ[f"AWP_ROOT{latest_version}"], "aisol")
 
     # Use ansys-tools-path
     _exe = atp.get_mechanical_path(allow_input=False, version=version)
     _version = atp.version_from_path("mechanical", _exe)
 
-    _aisol_path = os.path.dirname(_exe)
-    print(_version, _aisol_path)
+    _path = os.path.dirname(_exe)
+    print(_version, _path)
 
-    return _version, _aisol_path
+    return _version, _path
