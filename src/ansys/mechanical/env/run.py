@@ -88,17 +88,17 @@ def cli_find_mechanical(version: int, path: str | None = None) -> tuple[int, str
 
     if awp_roots:
         versions_found = []
-        for path in awp_roots:
-            folder = os.path.basename(os.path.normpath(path))
-            _version = folder.split("v")[-1]
+        for awp_root in awp_roots:
+            vfolder = os.path.basename(os.path.dirname(awp_root))
+            _version = vfolder.lstrip("v")
             versions_found.append(int(_version))
         if version in versions_found:
-            print(version, os.path.join(os.environ[f"AWP_ROOT{version}"], "aisol"))
-            return version, os.path.join(os.environ[f"AWP_ROOT{version}"], "aisol")
+            print(version, os.environ[f"AWP_ROOT{version}"])
+            return version, os.environ[f"AWP_ROOT{version}"]
         if versions_found:
             latest_version = max(versions_found)
-            print(latest_version, os.path.join(os.environ[f"AWP_ROOT{latest_version}"], "aisol"))
-            return latest_version, os.path.join(os.environ[f"AWP_ROOT{latest_version}"], "aisol")
+            print(latest_version, os.environ[f"AWP_ROOT{latest_version}"])
+            return latest_version, os.environ[f"AWP_ROOT{latest_version}"]
 
     # Use ansys-tools-path
     _exe = atp.get_mechanical_path(allow_input=False, version=version)
