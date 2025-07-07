@@ -90,7 +90,7 @@ def cli_find_mechanical(version: int, path: str | None = None) -> tuple[int, str
     if awp_roots:
         versions_found = []
         for awp_root in awp_roots:
-            vfolder = os.path.basename(os.path.dirname(awp_root))
+            vfolder = os.path.basename(awp_root)
             _version = vfolder.lstrip("v")
             versions_found.append(int(_version))
         if version in versions_found:
