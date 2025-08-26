@@ -21,7 +21,6 @@
 # SOFTWARE.
 
 """Initialize the package."""
-# At the top of your main module or package (i.e. src/ansys/<...>/__init__.py)
 
 import warnings
 
