@@ -21,6 +21,17 @@
 # SOFTWARE.
 
 """Initialize the package."""
+# At the top of your main module or package (i.e. src/ansys/<...>/__init__.py)
+
+import warnings
+
+warnings.warn(
+    "This library is deprecated and will no longer be maintained. "
+    "Please consider using alternatives. "
+    "For more information check https://github.com/ansys/pymechanical-env/issues/126",
+    DeprecationWarning,
+)
+
 try:
     import importlib.metadata as importlib_metadata
 except ModuleNotFoundError:  # pragma: no cover
