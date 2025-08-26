@@ -21,6 +21,16 @@
 # SOFTWARE.
 
 """Initialize the package."""
+
+import warnings
+
+warnings.warn(
+    "This library is deprecated and will no longer be maintained. "
+    "Please consider using alternatives. "
+    "For more information check https://github.com/ansys/pymechanical-env/issues/126",
+    DeprecationWarning,
+)
+
 try:
     import importlib.metadata as importlib_metadata
 except ModuleNotFoundError:  # pragma: no cover
