@@ -71,7 +71,7 @@ jobs:
       options: --entrypoint /bin/bash
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up python and pip
         run: |
           apt update
@@ -102,7 +102,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - run: |
           mkdir -p doc/_build/html
